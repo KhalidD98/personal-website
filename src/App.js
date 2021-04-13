@@ -9,12 +9,9 @@ const useStyles = makeStyles({
 
   },
   right_side: {
-    position: 'static',
-    overflow: 'visible',
-    backgroundColor: 'red',
   },
   main: {
-    minHeight: '100%'
+    height: '100%',
   }
 })
 
