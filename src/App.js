@@ -9,6 +9,7 @@ const useStyles = makeStyles({
 
   },
   right_side: {
+    height: '100%',
   },
   main: {
     height: '100%',
