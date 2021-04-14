@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
             position: 'fixed',
             left: '0px',
             top: '0px',
-            right: '552px',
+            right: '2em',
             width: '40%',
             height: '100%',
         },
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-export default function LeftSide() {
+export default function LeftSide({ props }) {
     const classes = useStyles()
     return (
         <Grid container
@@ -82,7 +82,7 @@ export default function LeftSide() {
 
             {/* Resume */}
             <Grid item className={classes.resume}>
-                <Link to="/about"> <h3> Resume </h3> </Link>
+                <Link to={'/' + props}> <h3> {props} </h3> </Link>
             </Grid>
 
             {/* Icons */}

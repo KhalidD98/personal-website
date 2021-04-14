@@ -13,7 +13,7 @@ export default function Home() {
         <>
             <Grid container >
                 <Grid item xs={12} sm={12} md={5}>
-                    <LeftSide />
+                    <LeftSide props={"Resume"} />
                 </Grid>
                 <Grid item xs={12} sm={12} md={7}>
                     <RightSide />

@@ -1,8 +1,14 @@
 [
     {
         "name": "Review Website",
-        "description": "random words I am saying in the description",
-        "color": "#CD494F"
+        "description": "First time using ReactJS, this website gets album review data from google sheets, also gets album covers from github library that uses spotify api.",
+        "color": "#CD494F",
+        "icons": [
+            "DiReact",
+            "DiJsBadge",
+            "DiCss3",
+            "SiMaterialUi"
+        ]
     },
     {
         "name": "Project 2",
