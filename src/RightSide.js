@@ -1,54 +1,31 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-import { Card } from '@material-ui/core';
-import CardHeader from '@material-ui/core/CardHeader';
+import Projects from './Projects'
+import projectData from './content/projects.json'
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        [theme.breakpoints.down('sm')]: {
-            position: 'static',
-            width: '100%',
-        }
-    },
-    project_one: {
-        height: '1900px',
-        width: '100%',
-        backgroundColor: 'red'
-    },
-    project_two: {
-        height: '1900px',
-        width: '100%',
-        backgroundColor: 'green'
-    },
-    project_three: {
-
-    },
-    project_four: {
-
+        width: '100%'
     },
 }))
 
 export default function RightSide() {
     const classes = useStyles()
     return (
-        <Grid container
-            direction="column"
-            justify="center"
-            alignItems="center"
-            className={classes.container}>
-            <Grid item className={classes.project_one}>
-
-            </Grid>
-            <Grid item className={classes.project_two}>
-
-            </Grid>
-            {/* <Grid item className={classes.project_three}>
-
-                </Grid>
-                <Grid item className={classes.project_four}>
-
-                </Grid> */}
-        </Grid>
+        <>
+            <Projects data={projectData[0]} />
+            <Projects data={projectData[1]} />
+            <Projects data={projectData[2]} />
+        </>
+        // <Grid container
+        //     direction="column"
+        //     justify="center"
+        //     alignItems="center"
+        //     className={classes.container}>
+        //     <Grid item>
+        //         <Projects />
+        //     </Grid>
+        // </Grid>
     )
 }

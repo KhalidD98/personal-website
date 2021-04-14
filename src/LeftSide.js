@@ -32,8 +32,6 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     container: {
-        // zIndex: '0',
-        // padding: '75px 85px '
         [theme.breakpoints.up('sm')]: {
             position: 'fixed',
             left: '0px',
@@ -46,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             position: 'static',
             width: '100%',
-            height: '800px',
+            height: '50em',
         },
         [theme.breakpoints.down('xs')]: {
             position: 'static',

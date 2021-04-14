@@ -6,15 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import RightSide from './RightSide';
 
 const useStyles = makeStyles((theme) => ({
-  left_side: {
 
-  },
-  right_side: {
-
-  },
-  main: {
-
-  }
 }))
 
 function App() {
