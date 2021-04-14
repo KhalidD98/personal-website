@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import image from './content/profilePicture.png'
+import { Link } from "react-router-dom"
+
 
 const useStyles = makeStyles((theme) => ({
     icons: {
@@ -80,7 +82,7 @@ export default function LeftSide() {
 
             {/* Resume */}
             <Grid item className={classes.resume}>
-                <h3> Resume </h3>
+                <Link to="/about"> <h3> Resume </h3> </Link>
             </Grid>
 
             {/* Icons */}
@@ -90,6 +92,7 @@ export default function LeftSide() {
                     justify="center"
                     alignItems="center"
                     spacing={3}>
+
                     <Grid item>
                         <GitHubIcon />
                     </Grid>
@@ -97,6 +100,7 @@ export default function LeftSide() {
                     <Grid item>
                         <LinkedInIcon />
                     </Grid>
+
                 </Grid>
             </Grid>
         </Grid>
