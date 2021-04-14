@@ -1,33 +1,31 @@
 import LeftSide from './LeftSide';
 import { Grid } from '@material-ui/core';
+import Box from '@material-ui/core/Box';
 
 import { makeStyles } from '@material-ui/core/styles';
 import RightSide from './RightSide';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   left_side: {
 
   },
   right_side: {
-    height: '100%',
+
   },
   main: {
-    height: '100%',
+
   }
-})
+}))
 
 function App() {
   const classes = useStyles()
   return (
     <>
-      <Grid container direction="row"
-        justify="center"
-        alignItems="center"
-        className={classes.main}>
-        <Grid item xs={5} className={classes.left_side}>
+      <Grid container >
+        <Grid item xs={12} sm={12} md={5}>
           <LeftSide />
         </Grid>
-        <Grid item xs={7} className={classes.right_side}>
+        <Grid item xs={12} sm={12} md={7}>
           <RightSide />
         </Grid>
       </Grid>
