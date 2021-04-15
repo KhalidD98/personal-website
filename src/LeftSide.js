@@ -5,6 +5,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import image from './content/profilePicture.png'
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,6 +34,10 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '24px'
         },
     },
+    resumeText: {
+        textDecoration: 'none',
+        color: 'black'
+    },
     container: {
         [theme.breakpoints.up('sm')]: {
             position: 'fixed',
@@ -58,6 +63,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LeftSide({ props }) {
     const classes = useStyles()
+
     return (
         <Grid container
             direction="column"
@@ -81,9 +87,9 @@ export default function LeftSide({ props }) {
             </Grid>
 
             {/* Resume */}
-            <Grid item className={classes.resume}>
-                <Link to={'/' + props}> <h3> {props} </h3> </Link>
-            </Grid>
+            <motion.Grid animate={{ fontSize: 150 }} item className={classes.resume} >
+                <Link className={classes.resumeText} to={'/' + props}> <h3> {props} </h3> </Link>
+            </motion.Grid>
 
             {/* Icons */}
             <Grid item className={classes.icons}>
@@ -103,6 +109,6 @@ export default function LeftSide({ props }) {
 
                 </Grid>
             </Grid>
-        </Grid>
+        </Grid >
     )
 }

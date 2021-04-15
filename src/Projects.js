@@ -3,24 +3,21 @@ import { makeStyles } from '@material-ui/core/styles'
 import { DiReact, DiJsBadge, DiCss3 } from "react-icons/di"
 import { SiMaterialUi } from "react-icons/si";
 import { Grid } from '@material-ui/core';
-import projectData from './content/projects.json'
 
 
 const useStyles = makeStyles((theme) => ({
     main: {
-        height: '1900px',
-        width: '100%',
         backgroundColor: props => props.color,
         display: 'flex',
+        // width: '100%',
         flexDirection: 'column',
         alignItems: 'center',
-        // justifyContent: 'center',
         color: 'white'
     },
     title: {
         padding: '0',
         margin: '0',
-        marginTop: '17%',
+        marginTop: '10%',
         marginBottom: '7%',
         fontFamily: 'poppins'
     },
@@ -32,9 +29,10 @@ const useStyles = makeStyles((theme) => ({
     },
     icons: {
         width: '60px',
-        height: '60px'
+        height: '60px',
     },
     iconContainer: {
+        marginBottom: '20%'
     }
 }))
 
@@ -51,13 +49,33 @@ export default function Projects({ data }) {
                 className={classes.iconContainer}
                 spacing={5}>
 
-                {projectData[0].icons.forEach((icon) => {
-                    console.log(icon)
-                    return (
-                        <Grid item>
-                            <DiReact className={classes.icons} />
-                        </Grid>
-                    )
+                {data.icons.map((icon, index) => {
+                    switch (icon) {
+                        case 'react':
+                            return (
+                                <Grid item>
+                                    <DiReact key={index} className={classes.icons} />
+                                </Grid>
+                            )
+                        case 'css':
+                            return (
+                                <Grid item>
+                                    <DiCss3 key={index} className={classes.icons} />
+                                </Grid>
+                            )
+                        case 'js':
+                            return (
+                                <Grid item>
+                                    <DiJsBadge key={index} className={classes.icons} />
+                                </Grid>
+                            )
+                        case 'materialui':
+                            return (
+                                <Grid item>
+                                    <SiMaterialUi key={index} className={classes.icons} />
+                                </Grid>
+                            )
+                    }
                 })}
 
                 {/*<Grid item>

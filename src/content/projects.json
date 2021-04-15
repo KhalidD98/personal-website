@@ -4,20 +4,28 @@
         "description": "First time using ReactJS, this website gets album review data from google sheets, also gets album covers from github library that uses spotify api.",
         "color": "#CD494F",
         "icons": [
-            "DiReact",
-            "DiJsBadge",
-            "DiCss3",
-            "SiMaterialUi"
+            "react",
+            "js",
+            "css",
+            "materialui"
         ]
     },
     {
         "name": "Project 2",
         "description": "random words I am saying in the description",
-        "color": "#008698"
+        "color": "#008698",
+        "icons": [
+            "css",
+            "materialui"
+        ]
     },
     {
         "name": "Project 3",
         "description": "random words I am saying in the description",
-        "color": "#393E46"
+        "color": "#393E46",
+        "icons": [
+            "css",
+            "react"
+        ]
     }
 ]
