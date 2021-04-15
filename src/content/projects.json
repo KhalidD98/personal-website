@@ -14,21 +14,29 @@
         "video": "albumReview.mp4"
     },
     {
-        "name": "Personal Website",
-        "description": "random words I am saying in the description",
-        "color": "#008698",
+        "name": "Twitch Controlled Minecraft Server",
+        "description": "Minecraft Server run on a Digital Ocean droplet that allows Twitch viewers to spawn mobs onto the server using Twitch's Channel Redemptions feature.",
+        "color": "#393E46",
+        "video": "minecraftServerDemo.mp4",
         "icons": [
             "css",
-            "materialui"
-        ]
+            "js",
+            "nodejs",
+            "digitcalocean",
+            "twitch"
+        ],
+        "github": "private"
     },
     {
-        "name": "Project 3",
-        "description": "random words I am saying in the description",
-        "color": "#393E46",
+        "name": "Personal Website",
+        "description": "The page you currently are on, the biggest struggle in creating it has to be the format going from desktop to mobile dynamically.",
+        "color": "#008698",
         "icons": [
+            "react",
+            "materialui",
             "css",
-            "react"
-        ]
+            "js"
+        ],
+        "github": "https://github.com/KhalidD98/personal-website"
     }
 ]

@@ -59,11 +59,22 @@ const useStyles = makeStyles((theme) => ({
             width: '100%',
             height: '50em',
         }
-    }
+    },
+    routingContainers: {
+        cursor: 'pointer'
+    },
 }))
 
 export default function LeftSide({ props }) {
     const classes = useStyles()
+
+    const githubClicked = () => {
+        window.location = 'https://github.com/KhalidD98/'
+    }
+
+    const linkedInClicked = () => {
+        window.location = 'https://www.linkedin.com/in/khaliddakak/'
+    }
 
     return (
         <Grid container
@@ -101,11 +112,11 @@ export default function LeftSide({ props }) {
                     spacing={3}>
 
                     <Grid item>
-                        <GitHubIcon />
+                        <GitHubIcon onClick={githubClicked} className={classes.routingContainers} />
                     </Grid>
 
                     <Grid item>
-                        <LinkedInIcon />
+                        <LinkedInIcon onClick={linkedInClicked} className={classes.routingContainers} />
                     </Grid>
 
                 </Grid>

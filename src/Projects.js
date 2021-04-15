@@ -1,11 +1,13 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { DiReact, DiJsBadge, DiCss3 } from "react-icons/di"
+import { DiReact, DiJsBadge, DiCss3, DiNodejsSmall } from "react-icons/di"
 import { SiMaterialUi } from "react-icons/si"
+import { FaDigitalOcean, FaTwitch } from "react-icons/fa";
 import { Grid } from '@material-ui/core'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import HttpIcon from '@material-ui/icons/Http'
 import albumReview from './content/albumReview.mp4'
+import minecraftServerDemo from './content/minecraftServerDemo.mp4'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -15,6 +17,8 @@ const useStyles = makeStyles((theme) => ({
         // width: '100%',
         flexDirection: 'column',
         alignItems: 'center',
+        textAlign: 'center',
+        justifyContent: 'center',
         color: 'white'
     },
     title: {
@@ -31,8 +35,12 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '8%'
     },
     icons: {
-        width: '60px',
-        height: '60px',
+        width: '3vw',
+        height: '3vw',
+        [theme.breakpoints.down('md')]: {
+            width: '35px',
+            height: '35px',
+        }
     },
     iconContainer: {
         marginBottom: '5%',
@@ -42,15 +50,13 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    pointerCursor: {
         cursor: 'pointer'
     },
     routingIcons: {
         width: '30px',
         height: '30px',
-    },
-    video: {
-        width: "100%",
-        height: "95%",
     }
 }))
 
@@ -68,7 +74,7 @@ export default function Projects({ data }) {
     return (
         <div className={classes.main}>
 
-            {/* Title and description from json */}
+            {/*///// Title and description from json /////*/}
             <h1 className={classes.title}>{data.name}</h1>
             <h2 className={classes.description}>{data.description}</h2>
 
@@ -79,7 +85,7 @@ export default function Projects({ data }) {
                 className={classes.iconContainer}
                 spacing={5}>
 
-                {/* Show icons based on what is listed in json */}
+                {/*///// Show icons based on what is listed in json /////*/}
                 {data.icons.map((icon, index) => {
                     switch (icon) {
                         case 'react':
@@ -106,39 +112,72 @@ export default function Projects({ data }) {
                                     <SiMaterialUi key={index} className={classes.icons} />
                                 </Grid>
                             )
+                        case 'nodejs':
+                            return (
+                                <Grid item>
+                                    <DiNodejsSmall key={index} className={classes.icons} />
+                                </Grid>
+                            )
+                        case 'digitcalocean':
+                            return (
+                                <Grid item>
+                                    <FaDigitalOcean key={index} className={classes.icons} />
+                                </Grid>
+                            )
+                        case 'twitch':
+                            return (
+                                <Grid item>
+                                    <FaTwitch key={index} className={classes.icons} />
+                                </Grid>
+                            )
                     }
                 })}
 
             </Grid>
 
+            {/*////// Github and Website Section //////*/}
             <Grid container direction="row"
                 justify="center"
                 alignItems="center"
                 className={classes.iconContainer}
                 spacing={5}
             >
-                {/* If github is available, show */}
-                {data.github &&
+                {/* If github is available and not private, show */}
+                {data.github !== 'private' &&
+                    <Grid item onClick={githubClicked} className={classes.routingContainers, classes.pointerCursor} >
+                        <GitHubIcon className={classes.routingIcons} />
+                        <p onClick={githubClicked}>Github</p>
+                    </Grid>
+                }
+
+                {/* If github is private */}
+                {data.github == 'private' &&
                     <Grid item className={classes.routingContainers}>
-                        <GitHubIcon onClick={githubClicked} className={classes.routingIcons} />
-                        <p>Github</p>
+                        <GitHubIcon className={classes.routingIcons} />
+                        <p>Private</p>
                     </Grid>
                 }
 
                 {/* If website is available, show */}
                 {data.website &&
-                    <Grid item className={classes.routingContainers}>
-                        <HttpIcon onClick={websiteClicked} className={classes.routingIcons} />
-                        <p>Website</p>
+                    <Grid item onClick={websiteClicked} className={classes.routingContainers, classes.pointerCursor} >
+                        <HttpIcon className={classes.routingIcons} />
+                        <p onClick={websiteClicked}>Website</p>
                     </Grid>
                 }
             </Grid>
 
+            {/*///// Video Section //////*/}
             <Grid item>
                 {/* If video is available, show */}
                 {data.video === 'albumReview.mp4' &&
-                    <video width="100%" height="95%" playbackRate={3} autoPlay loop muted playsinline >
+                    <video width="93%" height="88%" playbackRate={3} autoPlay loop muted playsinline >
                         <source src={albumReview} type="video/mp4"></source>
+                    </video>
+                }
+                {data.video === 'minecraftServerDemo.mp4' &&
+                    <video width="90%" height="85%" playbackRate={3} autoPlay loop muted playsinline >
+                        <source src={minecraftServerDemo} type="video/mp4"></source>
                     </video>
                 }
             </Grid>
