@@ -1,17 +1,20 @@
 [
     {
         "name": "Review Website",
-        "description": "First time using ReactJS, this website gets album review data from google sheets, also gets album covers from github library that uses spotify api.",
+        "description": "Website queries album reviews from Google Sheets Api, and displays it on screen with filter capabilities.",
         "color": "#CD494F",
         "icons": [
             "react",
             "js",
             "css",
             "materialui"
-        ]
+        ],
+        "website": "https://amazing-wescoff-4ed4a7.netlify.app/",
+        "github": "https://github.com/KhalidD98/album-review-website",
+        "video": "albumReview.mp4"
     },
     {
-        "name": "Project 2",
+        "name": "Personal Website",
         "description": "random words I am saying in the description",
         "color": "#008698",
         "icons": [

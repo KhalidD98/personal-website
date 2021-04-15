@@ -1,8 +1,8 @@
 import React from 'react'
-import RightSide from './RightSide';
-import LeftSide from './LeftSide';
-import { Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import RightSide from './RightSide'
+import LeftSide from './LeftSide'
+import { Grid } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles({
 
 });

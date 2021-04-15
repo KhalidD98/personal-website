@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
     name: {
         fontSize: '64px',
+        fontSize: '3vw',
         color: '#324E7B',
         [theme.breakpoints.down('md')]: {
             fontSize: '36px'
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     description: {
         fontSize: '36px',
         [theme.breakpoints.down('md')]: {
-            fontSize: '24px'
+            fontSize: '24px',
         }
     },
     resume: {
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     },
     resumeText: {
         textDecoration: 'none',
-        color: 'black'
+        color: '#324E7B',
     },
     container: {
         [theme.breakpoints.up('sm')]: {
@@ -87,9 +88,9 @@ export default function LeftSide({ props }) {
             </Grid>
 
             {/* Resume */}
-            <motion.Grid animate={{ fontSize: 150 }} item className={classes.resume} >
-                <Link className={classes.resumeText} to={'/' + props}> <h3> {props} </h3> </Link>
-            </motion.Grid>
+            <Grid item className={classes.resume} >
+                <Link className={classes.resumeText} to={'/' + props}> <motion.h3 whileHover={{ scale: 1.1 }}> {props} </motion.h3> </Link>
+            </Grid>
 
             {/* Icons */}
             <Grid item className={classes.icons}>
@@ -108,6 +109,11 @@ export default function LeftSide({ props }) {
                     </Grid>
 
                 </Grid>
+            </Grid>
+
+            {/* Contact Form */}
+            <Grid item>
+                <h2>Contact Me</h2>
             </Grid>
         </Grid >
     )

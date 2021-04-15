@@ -9,7 +9,23 @@ export default function Resume() {
                 <LeftSide props={"Home"} />
             </Grid>
             <Grid item xs={12} sm={12} md={7}>
-                <p>Test message</p>
+                <Grid container
+                    direction="column"
+                    justify="center"
+                    alignItems="center" spacing={0}>
+                    <Grid item>
+                        <h1>Khalid Dakak</h1>
+                    </Grid>
+                    <Grid item>
+                        <h2>Computer Science Student</h2>
+                    </Grid>
+                    <Grid item>
+                        <h3>P | (321)431-2250</h3>
+                    </Grid>
+                    <Grid item>
+                        <h3>E | khaliddakak@gmail.com</h3>
+                    </Grid>
+                </Grid>
             </Grid>
         </Grid>
     )
