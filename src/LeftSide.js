@@ -9,35 +9,20 @@ import { motion } from "framer-motion"
 import { MdContentCopy } from "react-icons/md"
 
 const useStyles = makeStyles((theme) => ({
-    icons: {
-        marginTop: '20px',
-    },
     name: {
-        fontSize: '64px',
-        fontSize: '3vw',
+        fontSize: '4vh',
         color: '#324E7B',
-        [theme.breakpoints.down('md')]: {
-            fontSize: '36px'
-        },
-        textAlign: 'center',
         fontFamily: 'poppins',
     },
     image: {
         borderRadius: '96px',
     },
     description: {
-        fontSize: '2vw',
+        fontSize: '2.8vh',
         fontFamily: 'poppins',
-        textAlign: 'center',
-        [theme.breakpoints.down('md')]: {
-            fontSize: '24px',
-        },
     },
     resume: {
-        fontSize: '36px',
-        [theme.breakpoints.down('md')]: {
-            fontSize: '24px'
-        },
+        fontSize: '3vh',
     },
     resumeText: {
         textDecoration: 'none',
@@ -45,14 +30,14 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'poppins',
     },
     container: {
-        overflow: 'auto',
+        overflowY: 'hidden',
+        fontSize: '2vh',
         [theme.breakpoints.up('sm')]: {
             position: 'fixed',
             left: '0px',
             top: '5%',
             right: '2em',
             width: '40%',
-            height: 'auto',
         },
 
         [theme.breakpoints.down('sm')]: {
@@ -61,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
             top: '5%',
             right: '2em',
             width: '100%',
-            height: 'auto',
         },
         [theme.breakpoints.down('xs')]: {
             position: 'static',
@@ -69,8 +53,10 @@ const useStyles = makeStyles((theme) => ({
             top: '5%',
             right: '2em',
             width: '100%',
-            height: 'auto',
         }
+    },
+    icons: {
+        marginTop: '20px',
     },
     routingContainers: {
         display: 'flex',
@@ -79,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         cursor: 'pointer',
         fontFamily: 'poppins',
+        fontSize: '2vh'
     },
     contactForm: {
         display: 'flex',
@@ -86,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         fontFamily: 'poppins',
+        fontSize: '2vh'
     },
     contactFormTitle: {
         marginTop: '20%',
