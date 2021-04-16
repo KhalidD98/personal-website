@@ -173,12 +173,12 @@ export default function Projects({ data }) {
             <Grid item>
                 {/* If video is available, show */}
                 {data.video === 'albumReview.mp4' &&
-                    <video width="93%" height="88%" playbackRate={3} autoPlay loop muted playsinline >
+                    <video width="93%" height="88%" playbackRate={3} autoPlay loop muted >
                         <source src={albumReview} type="video/mp4"></source>
                     </video>
                 }
                 {data.video === 'minecraftServerDemo.mp4' &&
-                    <video width="90%" height="85%" playbackRate={3} autoPlay loop muted playsinline >
+                    <video width="90%" height="85%" playbackRate={3} autoPlay loop muted >
                         <source src={minecraftServerDemo} type="video/mp4"></source>
                     </video>
                 }

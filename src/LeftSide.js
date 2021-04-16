@@ -1,12 +1,12 @@
 import React from 'react'
-import { Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import { Grid } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import image from './content/profilePicture.png'
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
-
+import { MdContentCopy } from "react-icons/md"
 
 const useStyles = makeStyles((theme) => ({
     icons: {
@@ -18,7 +18,8 @@ const useStyles = makeStyles((theme) => ({
         color: '#324E7B',
         [theme.breakpoints.down('md')]: {
             fontSize: '36px'
-        }
+        },
+        fontFamily: 'poppins',
     },
     image: {
         borderRadius: '96px',
@@ -27,7 +28,8 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '36px',
         [theme.breakpoints.down('md')]: {
             fontSize: '24px',
-        }
+        },
+        fontFamily: 'poppins',
     },
     resume: {
         fontSize: '36px',
@@ -38,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     resumeText: {
         textDecoration: 'none',
         color: '#324E7B',
+        fontFamily: 'poppins',
     },
     container: {
         [theme.breakpoints.up('sm')]: {
@@ -61,15 +64,45 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     routingContainers: {
-        cursor: 'pointer'
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        cursor: 'pointer',
+        fontFamily: 'poppins',
     },
     contactForm: {
-        paddingTop: '5px'
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontFamily: 'poppins',
+    },
+    contactFormTitle: {
+        marginTop: '20%',
+        margin: '0',
+        color: '#324E7B',
+    },
+    email: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    emailContent: {
+        margin: '0.5vw'
+    },
+    clipboard: {
+        cursor: 'pointer',
+    },
+    popup: {
+        opacity: '0'
     }
 }))
 
 export default function LeftSide({ props }) {
     const classes = useStyles()
+    const [isActive, setIsActive] = React.useState(false);
 
     const githubClicked = () => {
         window.location = 'https://github.com/KhalidD98/'
@@ -114,12 +147,18 @@ export default function LeftSide({ props }) {
                     alignItems="center"
                     spacing={3}>
 
-                    <Grid item>
-                        <GitHubIcon onClick={githubClicked} className={classes.routingContainers} />
+                    <Grid item onClick={githubClicked}>
+                        <motion.div whileHover={{ scale: 1.1 }} className={classes.routingContainers}>
+                            <GitHubIcon onClick={githubClicked} />
+                            <p> My Github </p>
+                        </motion.div>
                     </Grid>
 
-                    <Grid item>
-                        <LinkedInIcon onClick={linkedInClicked} className={classes.routingContainers} />
+                    <Grid item onClick={githubClicked}>
+                        <motion.div whileHover={{ scale: 1.1 }} className={classes.routingContainers}>
+                            <LinkedInIcon onClick={linkedInClicked} />
+                            <p> My linkedin </p>
+                        </motion.div>
                     </Grid>
 
                 </Grid>
@@ -127,8 +166,25 @@ export default function LeftSide({ props }) {
 
             {/* Contact Form */}
             <Grid item className={classes.contactForm}>
-                <h2>Contact Me</h2>
+                <h2 className={classes.contactFormTitle}>Contact Me</h2>
+                <div className={classes.email}>
+                    <p className={classes.emailContent}>khaliddakak@gmail.com</p>
+                    <motion.div whileHover={{ color: 'rgb(200, 0, 0)' }}>
+                        <MdContentCopy onClick={() => {
+                            setIsActive(!isActive)
+                            setTimeout(() => {
+                                setIsActive(false)
+                            }, 1000)
+                            navigator.clipboard.writeText('khaliddakak@gmail.com')
+                        }} className={classes.clipboard} />
+                    </motion.div>
+                </div>
+                <motion.p animate={{ opacity: isActive ? [1, 0] : 0 }} transition={{ duration: 1 }} className={classes.popup}>Copied!</motion.p>
             </Grid>
         </Grid >
     )
 }
+// onClick={() => setIsActive(!isActive)}
+// animate={{
+//     rotate: isActive ? 90 : 0,
+// }}
