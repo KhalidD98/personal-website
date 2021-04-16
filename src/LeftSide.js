@@ -63,6 +63,9 @@ const useStyles = makeStyles((theme) => ({
     routingContainers: {
         cursor: 'pointer'
     },
+    contactForm: {
+        paddingTop: '5px'
+    }
 }))
 
 export default function LeftSide({ props }) {
@@ -123,7 +126,7 @@ export default function LeftSide({ props }) {
             </Grid>
 
             {/* Contact Form */}
-            <Grid item>
+            <Grid item className={classes.contactForm}>
                 <h2>Contact Me</h2>
             </Grid>
         </Grid >
