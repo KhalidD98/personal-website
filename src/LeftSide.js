@@ -93,7 +93,8 @@ const useStyles = makeStyles((theme) => ({
         cursor: 'pointer',
     },
     popup: {
-        opacity: '0'
+        opacity: '0',
+        color: '#709be0'
     }
 }))
 
