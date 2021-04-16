@@ -19,17 +19,19 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('md')]: {
             fontSize: '36px'
         },
+        textAlign: 'center',
         fontFamily: 'poppins',
     },
     image: {
         borderRadius: '96px',
     },
     description: {
-        fontSize: '36px',
+        fontSize: '2vw',
+        fontFamily: 'poppins',
+        textAlign: 'center',
         [theme.breakpoints.down('md')]: {
             fontSize: '24px',
         },
-        fontFamily: 'poppins',
     },
     resume: {
         fontSize: '36px',
@@ -43,24 +45,31 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'poppins',
     },
     container: {
+        overflow: 'auto',
         [theme.breakpoints.up('sm')]: {
             position: 'fixed',
             left: '0px',
-            top: '0px',
+            top: '5%',
             right: '2em',
             width: '40%',
-            height: '100%',
+            height: 'auto',
         },
 
         [theme.breakpoints.down('sm')]: {
             position: 'static',
+            left: '0px',
+            top: '5%',
+            right: '2em',
             width: '100%',
-            height: '50em',
+            height: 'auto',
         },
         [theme.breakpoints.down('xs')]: {
             position: 'static',
+            left: '0px',
+            top: '5%',
+            right: '2em',
             width: '100%',
-            height: '50em',
+            height: 'auto',
         }
     },
     routingContainers: {
