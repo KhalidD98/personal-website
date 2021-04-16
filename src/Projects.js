@@ -4,6 +4,7 @@ import { DiReact, DiJsBadge, DiCss3, DiNodejsSmall } from "react-icons/di"
 import { SiMaterialUi } from "react-icons/si"
 import { FaDigitalOcean, FaTwitch } from "react-icons/fa";
 import { Grid } from '@material-ui/core'
+import { motion } from "framer-motion"
 import GitHubIcon from '@material-ui/icons/GitHub'
 import HttpIcon from '@material-ui/icons/Http'
 import albumReview from './content/albumReview.mp4'
@@ -50,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        fontFamily: 'poppins',
     },
     pointerCursor: {
         cursor: 'pointer'
@@ -147,8 +149,10 @@ export default function Projects({ data }) {
                 {/* If github is available and not private, show */}
                 {data.github !== 'private' &&
                     <Grid item onClick={githubClicked} className={classes.routingContainers} classname={classes.pointerCursor} >
-                        <GitHubIcon className={classes.routingIcons} />
-                        <p onClick={githubClicked}>Github</p>
+                        <motion.div className={classes.pointerCursor} whileHover={{ scale: 1.1 }}>
+                            <GitHubIcon className={classes.routingIcons} />
+                            <p onClick={githubClicked}>Public</p>
+                        </motion.div>
                     </Grid>
                 }
 
@@ -162,9 +166,11 @@ export default function Projects({ data }) {
 
                 {/* If website is available, show */}
                 {data.website &&
-                    <Grid item onClick={websiteClicked} className={classes.routingContainers} classname={classes.pointerCursor}>
-                        <HttpIcon className={classes.routingIcons} />
-                        <p onClick={websiteClicked}>Website</p>
+                    <Grid item onClick={websiteClicked} className={classes.routingContainers} >
+                        <motion.div className={classes.pointerCursor} whileHover={{ scale: 1.1 }}>
+                            <HttpIcon className={classes.routingIcons} />
+                            <p onClick={websiteClicked}>Website</p>
+                        </motion.div>
                     </Grid>
                 }
             </Grid>

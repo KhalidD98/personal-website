@@ -147,6 +147,8 @@ export default function LeftSide({ props }) {
                     alignItems="center"
                     spacing={3}>
 
+
+                    {/* Github Button */}
                     <Grid item onClick={githubClicked}>
                         <motion.div whileHover={{ scale: 1.1 }} className={classes.routingContainers}>
                             <GitHubIcon onClick={githubClicked} />
@@ -154,7 +156,9 @@ export default function LeftSide({ props }) {
                         </motion.div>
                     </Grid>
 
-                    <Grid item onClick={githubClicked}>
+
+                    {/* Linkedin Button */}
+                    <Grid item onClick={linkedInClicked}>
                         <motion.div whileHover={{ scale: 1.1 }} className={classes.routingContainers}>
                             <LinkedInIcon onClick={linkedInClicked} />
                             <p> My linkedin </p>
@@ -166,11 +170,17 @@ export default function LeftSide({ props }) {
 
             {/* Contact Form */}
             <Grid item className={classes.contactForm}>
+
+                {/* Contact me Text */}
                 <h2 className={classes.contactFormTitle}>Contact Me</h2>
+
+                {/* Email and copy button */}
                 <div className={classes.email}>
                     <p className={classes.emailContent}>khaliddakak@gmail.com</p>
                     <motion.div whileHover={{ color: 'rgb(200, 0, 0)' }}>
                         <MdContentCopy onClick={() => {
+
+                            // Activate Copied animation
                             setIsActive(!isActive)
                             setTimeout(() => {
                                 setIsActive(false)
@@ -179,6 +189,8 @@ export default function LeftSide({ props }) {
                         }} className={classes.clipboard} />
                     </motion.div>
                 </div>
+
+                {/* Copied text animation */}
                 <motion.p animate={{ opacity: isActive ? [1, 0] : 0 }} transition={{ duration: 1 }} className={classes.popup}>Copied!</motion.p>
             </Grid>
         </Grid >
