@@ -2,7 +2,6 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Projects from './Projects'
 import projectData from './content/projects.json'
-import { motion } from "framer-motion"
 
 const useStyles = makeStyles((theme) => ({
     container: {

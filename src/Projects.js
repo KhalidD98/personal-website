@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         color: 'white'
     },
     title: {
-        padding: '0',
+        padding: '10px',
         margin: '0',
         marginTop: '10%',
         marginBottom: '7%',
@@ -130,6 +130,8 @@ export default function Projects({ data }) {
                                     <FaTwitch key={index} className={classes.icons} />
                                 </Grid>
                             )
+                        default:
+                            return null
                     }
                 })}
 
@@ -144,14 +146,14 @@ export default function Projects({ data }) {
             >
                 {/* If github is available and not private, show */}
                 {data.github !== 'private' &&
-                    <Grid item onClick={githubClicked} className={classes.routingContainers, classes.pointerCursor} >
+                    <Grid item onClick={githubClicked} className={classes.routingContainers} classname={classes.pointerCursor} >
                         <GitHubIcon className={classes.routingIcons} />
                         <p onClick={githubClicked}>Github</p>
                     </Grid>
                 }
 
                 {/* If github is private */}
-                {data.github == 'private' &&
+                {data.github === 'private' &&
                     <Grid item className={classes.routingContainers}>
                         <GitHubIcon className={classes.routingIcons} />
                         <p>Private</p>
@@ -160,7 +162,7 @@ export default function Projects({ data }) {
 
                 {/* If website is available, show */}
                 {data.website &&
-                    <Grid item onClick={websiteClicked} className={classes.routingContainers, classes.pointerCursor} >
+                    <Grid item onClick={websiteClicked} className={classes.routingContainers} classname={classes.pointerCursor}>
                         <HttpIcon className={classes.routingIcons} />
                         <p onClick={websiteClicked}>Website</p>
                     </Grid>
@@ -181,6 +183,6 @@ export default function Projects({ data }) {
                     </video>
                 }
             </Grid>
-        </div>
+        </div >
     )
 }
