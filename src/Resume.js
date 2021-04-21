@@ -1,12 +1,13 @@
 import React from 'react'
-import LeftSide from './LeftSide'
-import { Grid } from '@material-ui/core';
+import RightSide from './RightSide'
+import { Grid } from '@material-ui/core'
+import { motion } from "framer-motion"
 
 export default function Resume() {
     return (
         <Grid container >
             <Grid item xs={12} sm={12} md={5}>
-                <LeftSide props={"Home"} />
+                {/* <RightSide props={"Home"} /> */}
             </Grid>
             <Grid item xs={12} sm={12} md={7}>
                 <Grid container

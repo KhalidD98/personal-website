@@ -9,6 +9,7 @@ import GitHubIcon from '@material-ui/icons/GitHub'
 import HttpIcon from '@material-ui/icons/Http'
 import albumReview from './content/albumReview.mp4'
 import minecraftServerDemo from './content/minecraftServerDemo.mp4'
+import { Link } from "react-router-dom"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -26,14 +27,14 @@ const useStyles = makeStyles((theme) => ({
         padding: '10px',
         margin: '0',
         marginTop: '10%',
-        marginBottom: '7%',
+        marginBottom: '5%',
         fontFamily: 'poppins',
     },
     description: {
         width: '65%',
         fontFamily: 'poppins',
         textAlign: 'center',
-        marginBottom: '8%'
+        marginBottom: '1%'
     },
     icons: {
         width: '3vw',
@@ -44,7 +45,8 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     iconContainer: {
-        marginBottom: '5%',
+        // marginBottom: '1%',
+        paddingTop: '6%'
     },
     routingContainers: {
         display: 'flex',
@@ -59,6 +61,13 @@ const useStyles = makeStyles((theme) => ({
     routingIcons: {
         width: '30px',
         height: '30px',
+    },
+    moreInfoButton: {
+        border: '1px solid #ffffff',
+        color: 'white',
+        borderRadius: '0.6em',
+        backgroundColor: 'transparent',
+        padding: '8px',
     }
 }))
 
@@ -76,7 +85,7 @@ export default function Projects({ data }) {
     return (
         <div className={classes.main}>
 
-            {/*///// Title and description from json /////*/}
+            {/*///// TITLE and DESCRIPTION from json /////*/}
             <h1 className={classes.title}>{data.name}</h1>
             <h2 className={classes.description}>{data.description}</h2>
 
@@ -139,7 +148,7 @@ export default function Projects({ data }) {
 
             </Grid>
 
-            {/*////// Github and Website Section //////*/}
+            {/*////// GITHUB and WEBSITE Section //////*/}
             <Grid container direction="row"
                 justify="center"
                 alignItems="center"
@@ -175,7 +184,16 @@ export default function Projects({ data }) {
                 }
             </Grid>
 
-            {/*///// Video Section //////*/}
+            {/*///// MORE INFO Section //////*/}
+            <Grid item>
+                <Link to={{ pathname: '/' + data.link, state: { data } }}>
+                    <motion.h3 whileHover={{ scale: 1.1 }}>
+                        <button className={classes.moreInfoButton}>More Info</button>
+                    </motion.h3>
+                </Link>
+            </Grid>
+
+            {/*///// VIDEO Section //////*/}
             <Grid item>
                 {/* If video is available, show */}
                 {data.video === 'albumReview.mp4' &&
@@ -189,6 +207,7 @@ export default function Projects({ data }) {
                     </video>
                 }
             </Grid>
+
         </div >
     )
 }

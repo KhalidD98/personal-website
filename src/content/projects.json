@@ -11,7 +11,8 @@
         ],
         "website": "https://amazing-wescoff-4ed4a7.netlify.app/",
         "github": "https://github.com/KhalidD98/album-review-website",
-        "video": "albumReview.mp4"
+        "video": "albumReview.mp4",
+        "link": "reviewwebsite"
     },
     {
         "name": "Twitch Controlled Minecraft Server",
@@ -25,7 +26,8 @@
             "digitcalocean",
             "twitch"
         ],
-        "github": "private"
+        "github": "private",
+        "link": "twitchmcserver"
     },
     {
         "name": "Personal Website",
@@ -37,6 +39,7 @@
             "css",
             "js"
         ],
-        "github": "https://github.com/KhalidD98/personal-website"
+        "github": "https://github.com/KhalidD98/personal-website",
+        "link": "personalwebsite"
     }
 ]
