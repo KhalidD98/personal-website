@@ -218,11 +218,11 @@ export default function ReviewWebsite({ data }) {
                 {/* Features */}
                 <Grid item>
                     <div className={classes.featuresContainer}>
-                        <h3>Features:</h3>
-                        <p>- Ability to update google sheet and it auto update screen on refresh</p>
-                        <p>- Filter by artist and album name</p>
-                        <p>- Covers auto generated from album-cover api</p>
-                        <p>- Works on any screen size</p>
+                        <h3>Future Features:</h3>
+                        <p>- Having people upvote or downvote reviews</p>
+                        <p>- Users can send in suggestions</p>
+                        <p>- Filter based on reviewer</p>
+                        <p>- Users can rate the albums as well</p>
                     </div>
                 </Grid>
 
