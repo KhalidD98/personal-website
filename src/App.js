@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom'
 import Home from './Home'
 import Resume from './Resume'
 import ReviewWebsite from './ReviewWebsite'
+import MinecraftServer from "./MinecraftServer";
 
 
 function App() {
@@ -26,6 +27,10 @@ function App() {
 
         <Route exact path="/reviewwebsite">
           <ReviewWebsite />
+        </Route>
+
+        <Route exact path="/twitchmcserver">
+          <MinecraftServer />
         </Route>
 
       </Switch>

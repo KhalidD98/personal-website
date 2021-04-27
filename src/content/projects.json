@@ -16,7 +16,7 @@
     },
     {
         "name": "Twitch Controlled Minecraft Server",
-        "description": "Minecraft Server run on a Digital Ocean droplet that allows Twitch viewers to spawn mobs onto the server using Twitch's Channel Redemptions feature.",
+        "description": "Minecraft Server run on a Digital Ocean droplet that allows Twitch viewers to spawn mobs onto the server using Donations or redemptions.",
         "color": "#393E46",
         "video": "minecraftServerDemo.mp4",
         "icons": [

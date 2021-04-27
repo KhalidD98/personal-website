@@ -65,6 +65,9 @@ const useStyles = makeStyles((theme) => ({
     dependencyColor: {
         color: '#001f3f'
     },
+    dependencyContainer:{
+        marginBottom: '16vh'
+    },
     apiPath: {
         width: '25vw',
         minWidth: '270px',
@@ -89,7 +92,15 @@ const useStyles = makeStyles((theme) => ({
         width: '25vw',
         minWidth: '270px',
         marginTop: '19vh',
-        marginBottom: '19vh',
+        marginBottom: '0vh',
+    },
+    filterText: {
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: '55vw',
+        textAlign: 'center',
+        marginBottom: '10vh',
     },
     featuresContainer: {
         width: '66vw',
@@ -109,7 +120,8 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
     },
     coloredText: {
-        color: '#000000'
+        color: '#000000',
+        textShadow: '0 0 6px white'
     },
     link: {
         textDecoration: 'none',
@@ -119,7 +131,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ReviewWebsite({ data }) {
     temp = useLocation()
-    // console.log(temp.state.data)
     const classes = useStyles(data)
     return (
         <motion.div
@@ -173,12 +184,13 @@ export default function ReviewWebsite({ data }) {
                         Albums are <span className={classes.coloredText}>dynamically</span> created from the google sheets API.
                         It imports all reviews that have a minimum of a
                         single review from
-                        a reviewer, gets album cover from the album-art API, then creates a new card.
+                        a reviewer, then gets the album cover from the album-art API, finally I create a new card containing the title, 
+                        all reviews available, and the album cover.
                     </p>
                 </Grid>
 
                 {/* Dependencies used */}
-                <Grid item>
+                <Grid item className={classes.dependencyContainer}>
                     <h3>"dependencies":</h3>
                     <p>{"{"}</p>
                     <div className={classes.dependencies}>
@@ -190,19 +202,14 @@ export default function ReviewWebsite({ data }) {
                     <p>{"}"}</p>
                 </Grid>
 
-                {/* API path photo */}
-                <Grid item>
-                    <img className={classes.apiPath} src={apiFlow}></img>
-                </Grid>
-
                 {/* Biggest Struggle */}
                 <Grid item className={classes.darkRedBackground}>
                     <div className={classes.biggestStruggle}>
                         <h3>Biggest Struggles:</h3>
                         <p>My first struggle was I was attempting to get all the google-sheet API data as well as
-                        the album-art API back to back <span className={classes.coloredText}>before</span> rendering. This caused issues since I needed to loop
+                        the album-art API covers for each album simultaneously <span className={classes.coloredText}>before</span> rendering. This caused issues since I needed to loop
                         over all the google-sheet API data in order to know which album to get the cover for. This would mean
-                        making 200+ API calls to the album-cover API and having all of them be awaited which caused the browser to
+                        making 200+ API calls to the album-cover API and having all of them be awaited simultaneously which caused the browser to
                         stall most of the time.
                         I eventually moved the album-cover API call inside of the card creation file
                         which improved speed since I didn't make 200+ API calls back to back, but instead by the time one card was created
@@ -213,6 +220,17 @@ export default function ReviewWebsite({ data }) {
                 {/* Search feature photo */}
                 <Grid item>
                     <img className={classes.searchBar} src={searchBar}></img>
+                </Grid>
+
+
+                {/* Filter Search Explanation */}
+                <Grid item>
+                    <div className={classes.filterText}>
+                        <h2>Filter Feature:</h2>
+                        <p>
+                            The website has filter capabilities so you can search for an artist or an album title.
+                        </p>
+                    </div>
                 </Grid>
 
                 {/* Features */}
