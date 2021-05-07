@@ -9,6 +9,7 @@ import { Grid } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 import { Link } from "react-router-dom"
 import jsonData from "../src/content/projects.json"
+import Divider from '@material-ui/core/Divider';
 let temp
 
 const useStyles = makeStyles((theme) => ({
@@ -115,11 +116,51 @@ const useStyles = makeStyles((theme) => ({
     },
     darkBackground: {
         width: '100%',
-        background: '#FF6666',
+        background: '#FF6960',
     },
     coloredAchievementText: {
         color: '#2827CC'
-    }
+    },
+    moreInfo: {
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: '55vw',
+        textAlign: 'center',
+        margin: '10vh',
+        fontSize: '25px',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '17px'
+        },
+    },
+    footerContainer: {
+        width: '65vw',
+        textAlign: 'center',
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
+    footerBackground: {
+        background: '#008698',
+        height: '200px',
+        width: '100%',
+    },
+    link: {
+        textDecoration: 'none',
+        color: 'white'
+    },
+    featuresContainer: {
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: '66vw',
+        textAlign: 'center',
+        marginBottom: '5vh',
+        fontSize: '25px',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '17px'
+        },
+    },
 
 }))
 
@@ -251,13 +292,55 @@ export default function MinecraftServer({ data }) {
 
                 {/* More Examples */}
                 <Grid item>
+                    <h1>More Examples</h1>
+                    <Grid container>
+                        <Grid item>
 
+                        </Grid>
+                    </Grid>
                 </Grid>
 
-
                 {/* More info */}
-                <Grid item>
+                <Grid item className={classes.darkBackground}>
+                    <div className={classes.moreInfo}>
+                        <h1>More Information</h1>
+                        <p>
+                            This project has been an almost 2 year continuous project. It started out where a $1 donation
+                            would spawn a random mob. Then added the feature that when a viewer subscribed to the channel
+                            they would get 5 random mobs spawn on the server. Although people really enjoyed these features
+                            it didn't allow new viewers who didn't want to spend money participate. Which is where
+                            Channel Point Redemptions comes into play.
+                    </p>
+                        <Divider />
+                        <p>
+                            I then learned to read Channel Point Redemptions on Twitch, which allowed viewers to spawn
+                            mobs and potion effects individually as if shopping online. At first implementation we would
+                            manually create every redemption and manually pause them when the streamer was logged off the
+                            server. So I took the time to learn and implement the creation and deletion of channel point
+                            redemptions to better automate the process.
+                    </p>
+                    </div>
+                </Grid>
 
+                {/* Future Features */}
+                <Grid item>
+                    <div className={classes.featuresContainer}>
+                        <h3>Future Features:</h3>
+                        <p>- Front End Website for purchasing similar to an online shop</p>
+                        <p>- Front End Website for Mod control of redemptions</p>
+                        <p>- Turning the server into a Modded Server</p>
+                        <p>- More redemptions for users to purchase</p>
+                    </div>
+                </Grid>
+
+                {/* Footer */}
+                <Grid item className={classes.footerBackground}>
+                    <div className={classes.footerContainer}>
+                        <h3>Next project:</h3>
+                        <Link className={classes.link} to={{ pathname: '/personalwebsite' }}>
+                            <h3>Personal Website</h3>
+                        </Link>
+                    </div>
                 </Grid>
             </Grid>
         </motion.div>

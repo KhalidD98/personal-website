@@ -21,9 +21,6 @@ function App() {
           <Home />
         </Route>
 
-        <Route exact path="/resume">
-          <Resume />
-        </Route>
 
         <Route exact path="/reviewwebsite">
           <ReviewWebsite />
@@ -31,6 +28,10 @@ function App() {
 
         <Route exact path="/twitchmcserver">
           <MinecraftServer />
+        </Route>
+
+        <Route exact path="/personalwebsite">
+          {/* <PersonalWebsite /> */}
         </Route>
 
       </Switch>
