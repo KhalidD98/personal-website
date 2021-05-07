@@ -157,7 +157,7 @@ export default function Projects({ data }) {
             >
                 {/* If github is available and not private, show */}
                 {data.github !== 'private' &&
-                    <Grid item onClick={githubClicked} className={classes.routingContainers} classname={classes.pointerCursor} >
+                    <Grid item onClick={githubClicked} className={classes.routingContainers} className={classes.pointerCursor} >
                         <motion.div className={classes.pointerCursor} whileHover={{ scale: 1.1 }}>
                             <GitHubIcon className={classes.routingIcons} />
                             <p onClick={githubClicked}>Public</p>

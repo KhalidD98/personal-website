@@ -1,5 +1,5 @@
+import React, { useEffect } from 'react';
 import { Button } from '@material-ui/core'
-import React from 'react'
 import { useLocation } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { makeStyles } from '@material-ui/core/styles'
@@ -8,6 +8,7 @@ import { Grid } from '@material-ui/core'
 import albumReviewRow from './content/reviewWebsiteRow.png'
 import apiFlow from './content/apiFlow.png'
 import searchBar from './content/searchBar.png'
+import jsonData from "../src/content/projects.json"
 let temp
 
 const useStyles = makeStyles((theme) => ({
@@ -65,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     dependencyColor: {
         color: '#001f3f'
     },
-    dependencyContainer:{
+    dependencyContainer: {
         marginBottom: '16vh'
     },
     apiPath: {
@@ -103,9 +104,12 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '10vh',
     },
     featuresContainer: {
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
         width: '66vw',
         textAlign: 'center',
-        marginBottom: '15vh'
+        marginBottom: '5vh'
     },
     footerContainer: {
         width: '65vw',
@@ -121,7 +125,6 @@ const useStyles = makeStyles((theme) => ({
     },
     coloredText: {
         color: '#000000',
-        textShadow: '0 0 6px white'
     },
     link: {
         textDecoration: 'none',
@@ -130,6 +133,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function ReviewWebsite({ data }) {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     temp = useLocation()
     const classes = useStyles(data)
     return (
@@ -161,13 +167,13 @@ export default function ReviewWebsite({ data }) {
                         spacing={10}>
                         <Grid item>
                             <h1 className={classes.title}>
-                                {temp.state.data.name}
+                                {jsonData[0].name}
                             </h1>
                         </Grid>
 
                         <Grid item>
                             <h3 className={classes.description}>
-                                {temp.state.data.description}
+                                {jsonData[1].description}
                             </h3>
                         </Grid>
                     </Grid>
@@ -184,7 +190,7 @@ export default function ReviewWebsite({ data }) {
                         Albums are <span className={classes.coloredText}>dynamically</span> created from the google sheets API.
                         It imports all reviews that have a minimum of a
                         single review from
-                        a reviewer, then gets the album cover from the album-art API, finally I create a new card containing the title, 
+                        a reviewer, then gets the album cover from the album-art API, finally I create a new card containing the title,
                         all reviews available, and the album cover.
                     </p>
                 </Grid>
@@ -234,7 +240,7 @@ export default function ReviewWebsite({ data }) {
                 </Grid>
 
                 {/* Features */}
-                <Grid item>
+                <Grid item className={classes.darkRedBackground}>
                     <div className={classes.featuresContainer}>
                         <h3>Future Features:</h3>
                         <p>- Having people upvote or downvote reviews</p>
@@ -248,7 +254,7 @@ export default function ReviewWebsite({ data }) {
                 <Grid item className={classes.footerBackground}>
                     <div className={classes.footerContainer}>
                         <h3>Next project:</h3>
-                        <Link className={classes.link} to={{ pathname: './MinecraftServer' }}>
+                        <Link className={classes.link} to={{ pathname: '/twitchmcserver' }}>
                             <h3>Twitch Controlled Minecraft Server</h3>
                         </Link>
                     </div>
