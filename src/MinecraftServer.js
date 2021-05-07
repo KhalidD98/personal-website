@@ -118,8 +118,6 @@ export default function MinecraftServer({ data }) {
                     {jsonData[1].description}
                 </Grid>
 
-                {/* Explaining creation and deletion of redemptions */}
-
                 {/* Examples */}
                 <Grid container
                     direction="row"
