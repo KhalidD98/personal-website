@@ -77,7 +77,47 @@ const useStyles = makeStyles((theme) => ({
     },
     coloredText: {
         color: '#ff967a'
+    },
+    dependencies: {
+        marginLeft: '1.5vw',
+    },
+    dependecyTitle: {
+
+    },
+    dependencyColor: {
+        color: '#ff967a'
+    },
+    dependencyContainer: {
+        marginBottom: '16vh',
+        marginTop: '16vh',
+        fontSize: '25px',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '15px',
+        },
+    },
+    achievements: {
+        width: '45%',
+        [theme.breakpoints.down('sm')]: {
+            width: '75%'
+        },
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: '55vw',
+        textAlign: 'center',
+        margin: '10vh',
+    },
+    achievementText: {
+        fontSize: '33px',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '28px'
+        },
+    },
+    darkBackground: {
+        width: '100%',
+        background: '#FF6666',
     }
+
 }))
 
 export default function MinecraftServer({ data }) {
@@ -172,8 +212,32 @@ export default function MinecraftServer({ data }) {
                 </Grid>
 
                 {/* Dependencies */}
-                <Grid item>
+                <Grid item className={classes.dependencyContainer}>
+                    <h3 className={classes.dependecyTitle}>"dependencies":</h3>
+                    <p>{"{"}</p>
+                    <div className={classes.dependencies}>
+                        <p>"<span className={classes.dependencyColor}>animejs</span>": "^3.1.0",</p>
+                        <p>"<span className={classes.dependencyColor}>axios</span>": "^0.21.1",</p>
+                        <p>"<span className={classes.dependencyColor}>json-query</span>": "^2.2.2",</p>
+                        <p>"<span className={classes.dependencyColor}>node-fetch</span>": "^2.6.1",</p>
+                        <p>"<span className={classes.dependencyColor}>scriptserver</span>": "^1.2.0",</p>
+                        <p>"<span className={classes.dependencyColor}>scriptserver-event</span>": "^1.1.1",</p>
+                        <p>"<span className={classes.dependencyColor}>socket.io</span>": "^2.3.0",</p>
+                        <p>"<span className={classes.dependencyColor}>socket.io-client</span>": "^2.3.0",</p>
+                        <p>"<span className={classes.dependencyColor}>twitch-bot</span>": "^1.3.5",</p>
+                    </div>
+                    <p>{"}"}</p>
+                </Grid>
 
+                {/* Achievements */}
+                <Grid item className={classes.darkBackground}>
+                    <div className={classes.achievements}>
+                        <p className={classes.achievementText}>
+                            This server as well as a few small robots we created helped raise over $18,000 along side a
+                            few other streamers. As well as $5,000 along side a few other streamers for the Australian
+                            Wildfires.
+                    </p>
+                    </div>
                 </Grid>
 
                 {/* More Examples */}
@@ -181,10 +245,6 @@ export default function MinecraftServer({ data }) {
 
                 </Grid>
 
-                {/* Achievements */}
-                <Grid item>
-
-                </Grid>
 
                 {/* More info */}
                 <Grid item>
