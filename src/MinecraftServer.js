@@ -116,6 +116,9 @@ const useStyles = makeStyles((theme) => ({
     darkBackground: {
         width: '100%',
         background: '#FF6666',
+    },
+    coloredAchievementText: {
+        color: '#2827CC'
     }
 
 }))
@@ -233,10 +236,16 @@ export default function MinecraftServer({ data }) {
                 <Grid item className={classes.darkBackground}>
                     <div className={classes.achievements}>
                         <p className={classes.achievementText}>
-                            This server as well as a few small robots we created helped raise over $18,000 along side a
-                            few other streamers. As well as $5,000 along side a few other streamers for the Australian
-                            Wildfires.
-                    </p>
+                            This Minecraft Server as well as a few small robots we created helped raise over
+                            <span className={classes.coloredAchievementText}> $18,000 </span>
+                            along side a
+                            few other streamers for
+                            <span className={classes.coloredAchievementText}> Make a Wish. </span>
+                            As well as
+                            <span className={classes.coloredAchievementText}> $5,000 </span>
+                            along side a few other streamers for the
+                            <span className={classes.coloredAchievementText}> Australian Wildfires </span>
+                        </p>
                     </div>
                 </Grid>
 
