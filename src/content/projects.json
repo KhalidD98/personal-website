@@ -1,7 +1,7 @@
 [
     {
         "name": "Review Website",
-        "description": "Website queries album reviews from Google Sheets Api, and displays it on screen with filter capabilities.",
+        "description": "A Website that queries album reviews from Google Sheets Api, and displays it on screen with filter capabilities.",
         "color": "#CD494F",
         "icons": [
             "react",
@@ -11,11 +11,12 @@
         ],
         "website": "https://amazing-wescoff-4ed4a7.netlify.app/",
         "github": "https://github.com/KhalidD98/album-review-website",
-        "video": "albumReview.mp4"
+        "video": "albumReview.mp4",
+        "link": "reviewwebsite"
     },
     {
         "name": "Twitch Controlled Minecraft Server",
-        "description": "Minecraft Server run on a Digital Ocean droplet that allows Twitch viewers to spawn mobs onto the server using Twitch's Channel Redemptions feature.",
+        "description": "Minecraft Server run on a Digital Ocean droplet that allows Twitch viewers to spawn mobs onto the server using donations or redemptions.",
         "color": "#393E46",
         "video": "minecraftServerDemo.mp4",
         "icons": [
@@ -25,7 +26,8 @@
             "digitcalocean",
             "twitch"
         ],
-        "github": "private"
+        "github": "private",
+        "link": "twitchmcserver"
     },
     {
         "name": "Personal Website",
@@ -37,6 +39,7 @@
             "css",
             "js"
         ],
-        "github": "https://github.com/KhalidD98/personal-website"
+        "github": "https://github.com/KhalidD98/personal-website",
+        "link": "personalwebsite"
     }
 ]
