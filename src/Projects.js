@@ -68,6 +68,9 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '0.6em',
         backgroundColor: 'transparent',
         padding: '8px',
+    },
+    videoSection: {
+        marginBottom: '30px'
     }
 }))
 
@@ -194,7 +197,7 @@ export default function Projects({ data }) {
             </Grid>
 
             {/*///// VIDEO Section //////*/}
-            <Grid item>
+            <Grid item className={classes.videoSection}>
                 {/* If video is available, show */}
                 {data.video === 'albumReview.mp4' &&
                     <video width="93%" height="88%" playbackRate={3} autoPlay loop muted >
