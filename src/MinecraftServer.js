@@ -5,6 +5,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import inChatExample from './content/examples/InChatExample.mp4'
 import inGameExample from './content/examples/InGameExample.mp4'
 import loginExample from './content/examples/LoginExample.mp4'
+import exampleOne from './content/examples/example_one.mp4'
+import exampleTwo from './content/examples/example_two.mp4'
+import exampleThree from './content/examples/example_three.mp4'
 import { Grid } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 import { Link } from "react-router-dom"
@@ -48,10 +51,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         height: '600px',
         margin: '10px',
-    },
-    examplesContainer: {
-        width: '100%',
-        paddingTop: '160px'
     },
     exampleText: {
         width: '90%',
@@ -159,6 +158,31 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '25px',
         [theme.breakpoints.down('sm')]: {
             fontSize: '17px'
+        },
+    },
+    moreExamples: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    examplesContainer: {
+        width: '100%',
+        padding: '0px',
+        margin: '0px'
+    },
+    exampleItem: {
+        padding: '0px',
+        margin: '0px'
+    },
+    exampleVideoItem: {
+        padding: '0px',
+        margin: '0px',
+        width: '500px',
+        height: '500px',
+        [theme.breakpoints.down('sm')]: {
+            width: '300px',
+            height: '300px'
         },
     },
 
@@ -291,12 +315,36 @@ export default function MinecraftServer({ data }) {
                 </Grid>
 
                 {/* More Examples */}
-                <Grid item>
+                <Grid item className={classes.moreExamples}>
                     <h1>More Examples</h1>
-                    <Grid container>
-                        <Grid item>
+                    <Grid container
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                        spacing={6}
+                        className={classes.examplesContainer}>
 
+                        {/* Example One */}
+                        <Grid item className={classes.exampleItem}>
+                            <video className={classes.exampleVideoItem} playbackRate={3} autoPlay loop muted>
+                                <source src={exampleOne} type="video/mp4"></source>
+                            </video>
                         </Grid>
+
+                        {/* Example Two */}
+                        <Grid item className={classes.exampleItem}>
+                            <video className={classes.exampleVideoItem} playbackRate={3} autoPlay loop muted>
+                                <source src={exampleTwo} type="video/mp4"></source>
+                            </video>
+                        </Grid>
+
+                        {/* Example Three */}
+                        <Grid item className={classes.exampleItem}>
+                            <video className={classes.exampleVideoItem} playbackRate={3} autoPlay loop muted>
+                                <source src={exampleThree} type="video/mp4"></source>
+                            </video>
+                        </Grid>
+
                     </Grid>
                 </Grid>
 
