@@ -245,7 +245,7 @@ export default function MinecraftServer({ data }) {
 
                     {/* Twitch channel points example */}
                     <Grid item className={classes.videoContainer}>
-                        <video className={classes.videoElement} playbackRate={3} autoPlay loop muted>
+                        <video className={classes.videoElement} playbackRate={3} preload="auto" autoPlay loop muted>
                             <source src={inChatExample} type="video/mp4"></source>
                         </video>
 
@@ -259,7 +259,7 @@ export default function MinecraftServer({ data }) {
 
                     {/* Gifting Subs example */}
                     <Grid item className={classes.videoContainer}>
-                        <video className={classes.videoElement} playbackRate={3} autoPlay loop muted>
+                        <video className={classes.videoElement} playbackRate={3} preload="auto" autoPlay loop muted>
                             <source src={inGameExample} type="video/mp4" ></source>
                         </video>
                         <p className={classes.exampleText}>
@@ -272,7 +272,7 @@ export default function MinecraftServer({ data }) {
 
                     {/* Donation example */}
                     <Grid item className={classes.videoContainer}>
-                        <video className={classes.videoElement} playbackRate={3} autoPlay loop muted>
+                        <video className={classes.videoElement} playbackRate={3} preload="auto" autoPlay loop muted>
                             <source src={loginExample} type="video/mp4"></source>
                         </video>
                         <p className={classes.exampleText}>
@@ -334,7 +334,7 @@ export default function MinecraftServer({ data }) {
 
                         {/* Example One */}
                         <Grid item className={classes.exampleItem}>
-                            <video className={classes.exampleVideoItem} playbackRate={3} autoPlay loop muted>
+                            <video className={classes.exampleVideoItem} playbackRate={3} preload="auto" autoPlay loop muted>
                                 <source src={exampleOne} type="video/mp4"></source>
                             </video>
                             <p> User gifted 5 subscribers, spawning in 25 mobs </p>
@@ -342,7 +342,7 @@ export default function MinecraftServer({ data }) {
 
                         {/* Example Two */}
                         <Grid item className={classes.exampleItem}>
-                            <video className={classes.exampleVideoItem} playbackRate={3} autoPlay loop muted>
+                            <video className={classes.exampleVideoItem} playbackRate={3} preload="auto" autoPlay loop muted>
                                 <source src={exampleTwo} type="video/mp4"></source>
                             </video>
                             <p> User gifted 25 subs, spawning in 100 mobs </p>
@@ -350,7 +350,7 @@ export default function MinecraftServer({ data }) {
 
                         {/* Example Three */}
                         <Grid item className={classes.exampleItem}>
-                            <video className={classes.exampleVideoItem} playbackRate={3} autoPlay loop muted>
+                            <video className={classes.exampleVideoItem} playbackRate={3} preload="auto" autoPlay loop muted>
                                 <source src={exampleThree} type="video/mp4"></source>
                             </video>
                             <p> Viewer in chat used Channel Points to spawn in mobs </p>
