@@ -10,10 +10,14 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function Home({ data }) {
+
+    //Scroll to top on startup
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+
     const classes = useStyles(data)
+
     return (
         <Grid container direction="row">
             <Grid item xs={12} sm={12} md={5}>
@@ -21,9 +25,10 @@ export default function Home({ data }) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                >
+                    transition={{ duration: 0.5 }} >
+
                     <LeftSide props={"Resume"} />
+
                 </motion.div>
             </Grid>
 

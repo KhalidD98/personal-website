@@ -5,18 +5,17 @@ import { SiMaterialUi } from "react-icons/si"
 import { FaDigitalOcean, FaTwitch } from "react-icons/fa";
 import { Grid } from '@material-ui/core'
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 import GitHubIcon from '@material-ui/icons/GitHub'
 import HttpIcon from '@material-ui/icons/Http'
 import albumReview from './content/examples/albumReview.mp4'
 import minecraftServerDemo from './content/examples/minecraftServerDemo.mp4'
-import { Link } from "react-router-dom"
 
 
 const useStyles = makeStyles((theme) => ({
     main: {
         backgroundColor: props => props.color,
         display: 'flex',
-        // width: '100%',
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
@@ -45,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     iconContainer: {
-        // marginBottom: '1%',
         paddingTop: '6%'
     },
     routingContainers: {
@@ -99,7 +97,7 @@ export default function Projects({ data }) {
                 className={classes.iconContainer}
                 spacing={5}>
 
-                {/*///// Show icons based on what is listed in json /////*/}
+                {/*///// Show icons based on what is listed in projects.json /////*/}
                 {data.icons.map((icon, index) => {
                     switch (icon) {
                         case 'react':
@@ -132,7 +130,7 @@ export default function Projects({ data }) {
                                     <DiNodejsSmall key={index} className={classes.icons} />
                                 </Grid>
                             )
-                        case 'digitcalocean':
+                        case 'digitalocean':
                             return (
                                 <Grid item>
                                     <FaDigitalOcean key={index} className={classes.icons} />
@@ -148,7 +146,6 @@ export default function Projects({ data }) {
                             return null
                     }
                 })}
-
             </Grid>
 
             {/*////// GITHUB and WEBSITE Section //////*/}

@@ -8,11 +8,10 @@ import { Grid } from '@material-ui/core'
 import albumReviewRow from './content/reviewWebsiteRow.png'
 import searchBar from './content/searchBar.png'
 import jsonData from "../src/content/projects.json"
-let temp
 
 const useStyles = makeStyles((theme) => ({
     main: {
-        backgroundColor: temp.state.data.color,
+        backgroundColor: jsonData[0].color,
         width: '100%',
         height: '100%',
         color: 'white',
@@ -132,11 +131,14 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function ReviewWebsite({ data }) {
+
+    // Scroll window to top at startup
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
-    temp = useLocation()
+
     const classes = useStyles(data)
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -149,14 +151,14 @@ export default function ReviewWebsite({ data }) {
                 alignItems="center"
                 spacing={10}>
 
-                {/* Home button */}
+                {/****** Home button ******/}
                 <Grid item className={classes.homeButtonContainer}>
                     <Link to={{ pathname: '/' }}>
                         <Button className={classes.homeButton}>Home</Button>
                     </Link>
                 </Grid>
 
-                {/* Title and description */}
+                {/****** Title and description ******/}
                 <Grid item>
                     <Grid container
                         direction="row"
@@ -172,31 +174,31 @@ export default function ReviewWebsite({ data }) {
 
                         <Grid item>
                             <h3 className={classes.description}>
-                                {jsonData[1].description}
+                                {jsonData[0].description}
                             </h3>
                         </Grid>
                     </Grid>
                 </Grid>
 
-                {/* First Photo of album row */}
+                {/******* First Photo of album row ******/}
                 <Grid item>
                     <img className={classes.albumReviewRow} src={albumReviewRow}></img>
                 </Grid>
 
-                {/* API Explanation */}
+                {/*******  API Explanation ******/}
                 <Grid item className={classes.apiExplanationContainer}>
                     <p className={classes.apiExplanation}>
                         Albums are <span className={classes.coloredText}>dynamically</span> created from the google sheets API.
                         It imports all reviews that have a minimum of a
                         single review from
-                        a reviewer, then gets the album cover from the album-art API, finally I create a new card containing the title,
-                        all reviews available, and the album cover.
+                        a reviewer, then gets the album cover from the album-art API,
+                        finally, a new card containing the title, reviews, and the album cover is created.
                     </p>
                 </Grid>
 
-                {/* Dependencies used */}
+                {/****** Dependencies used ******/}
                 <Grid item className={classes.dependencyContainer}>
-                    <h3>"dependencies":</h3>
+                    <h3>"dependencies used":</h3>
                     <p>{"{"}</p>
                     <div className={classes.dependencies}>
                         <p>"<span className={classes.dependencyColor}>album-art</span>": "^2.0.2",</p>
@@ -207,7 +209,7 @@ export default function ReviewWebsite({ data }) {
                     <p>{"}"}</p>
                 </Grid>
 
-                {/* Biggest Struggle */}
+                {/****** Biggest Struggle *******/}
                 <Grid item className={classes.darkRedBackground}>
                     <div className={classes.biggestStruggle}>
                         <h3>Biggest Struggles:</h3>
@@ -222,13 +224,13 @@ export default function ReviewWebsite({ data }) {
                     </div>
                 </Grid>
 
-                {/* Search feature photo */}
+                {/****** Search feature photo ******/}
                 <Grid item>
                     <img className={classes.searchBar} src={searchBar}></img>
                 </Grid>
 
 
-                {/* Filter Search Explanation */}
+                {/******* Filter Search Explanation ******/}
                 <Grid item>
                     <div className={classes.filterText}>
                         <h2>Filter Feature:</h2>
@@ -238,7 +240,7 @@ export default function ReviewWebsite({ data }) {
                     </div>
                 </Grid>
 
-                {/* Features */}
+                {/******* Features ******/}
                 <Grid item className={classes.darkRedBackground}>
                     <div className={classes.featuresContainer}>
                         <h3>Future Features:</h3>
@@ -249,7 +251,7 @@ export default function ReviewWebsite({ data }) {
                     </div>
                 </Grid>
 
-                {/* Footer */}
+                {/******* Footer *******/}
                 <Grid item className={classes.footerBackground}>
                     <div className={classes.footerContainer}>
                         <h3>Next project:</h3>
@@ -258,7 +260,6 @@ export default function ReviewWebsite({ data }) {
                         </Link>
                     </div>
                 </Grid>
-
             </Grid>
         </motion.div>
     )

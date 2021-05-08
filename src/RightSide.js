@@ -11,10 +11,14 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function RightSide() {
+
+    // Scroll to top on start up
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+
     const classes = useStyles()
+
     return (
         <div className={classes.container}>
             <Projects data={projectData[0]} />

@@ -13,7 +13,6 @@ import { Button } from '@material-ui/core'
 import { Link } from "react-router-dom"
 import jsonData from "../src/content/projects.json"
 import Divider from '@material-ui/core/Divider';
-let temp
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -54,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         height: '600px',
         margin: '10px',
+        paddingTop: '10px'
     },
     exampleText: {
         width: '90%',
@@ -197,11 +197,14 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 export default function MinecraftServer({ data }) {
+
+    // Scroll to top on startup
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
-    temp = useLocation()
+
     const classes = useStyles(data)
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -215,26 +218,26 @@ export default function MinecraftServer({ data }) {
                 alignItems="center"
                 spacing={10}>
 
-                {/* Home button */}
+                {/****** Home button ******/}
                 <Grid item className={classes.homeButtonContainer}>
                     <Link to={{ pathname: '/' }}>
                         <Button className={classes.homeButton}>Home</Button>
                     </Link>
                 </Grid>
 
-                {/* Title and description */}
+                {/****** Title and description ******/}
                 <Grid item>
                     <h1 className={classes.title}>
                         {jsonData[1].name}
                     </h1>
                 </Grid>
 
-                {/* Description */}
+                {/****** Description ******/}
                 <Grid item className={classes.description}>
                     {jsonData[1].description}
                 </Grid>
 
-                {/* Examples */}
+                {/****** Examples ******/}
                 <Grid container
                     direction="row"
                     justify="center"
@@ -243,7 +246,7 @@ export default function MinecraftServer({ data }) {
                     className={classes.examplesContainer}>
 
 
-                    {/* Twitch channel points example */}
+                    {/****** Twitch channel points example ******/}
                     <Grid item className={classes.videoContainer}>
                         <video className={classes.videoElement} playbackRate={3} preload="auto" autoPlay loop muted>
                             <source src={inChatExample} type="video/mp4"></source>
@@ -257,7 +260,7 @@ export default function MinecraftServer({ data }) {
                         </p>
                     </Grid>
 
-                    {/* Gifting Subs example */}
+                    {/****** Gifting Subs example ******/}
                     <Grid item className={classes.videoContainer}>
                         <video className={classes.videoElement} playbackRate={3} preload="auto" autoPlay loop muted>
                             <source src={inGameExample} type="video/mp4" ></source>
@@ -270,7 +273,7 @@ export default function MinecraftServer({ data }) {
                         </p>
                     </Grid>
 
-                    {/* Donation example */}
+                    {/****** Donation example ******/}
                     <Grid item className={classes.videoContainer}>
                         <video className={classes.videoElement} playbackRate={3} preload="auto" autoPlay loop muted>
                             <source src={loginExample} type="video/mp4"></source>
@@ -287,9 +290,9 @@ export default function MinecraftServer({ data }) {
                     </Grid>
                 </Grid>
 
-                {/* Dependencies */}
+                {/****** Dependencies ******/}
                 <Grid item className={classes.dependencyContainer}>
-                    <h3 className={classes.dependecyTitle}>"dependencies":</h3>
+                    <h3 className={classes.dependecyTitle}>"dependencies used":</h3>
                     <p>{"{"}</p>
                     <div className={classes.dependencies}>
                         <p>"<span className={classes.dependencyColor}>animejs</span>": "^3.1.0",</p>
@@ -305,7 +308,7 @@ export default function MinecraftServer({ data }) {
                     <p>{"}"}</p>
                 </Grid>
 
-                {/* Achievements */}
+                {/****** Achievements ******/}
                 <Grid item className={classes.darkBackground}>
                     <div className={classes.achievements}>
                         <p className={classes.achievementText}>
@@ -322,7 +325,7 @@ export default function MinecraftServer({ data }) {
                     </div>
                 </Grid>
 
-                {/* More Examples */}
+                {/****** Examples Container ******/}
                 <Grid item className={classes.moreExamples}>
                     <h1>More Examples</h1>
                     <Grid container
@@ -332,7 +335,7 @@ export default function MinecraftServer({ data }) {
                         spacing={6}
                         className={classes.examplesContainer}>
 
-                        {/* Example One */}
+                        {/****** Minecraft Server Example ONE ******/}
                         <Grid item className={classes.exampleItem}>
                             <video className={classes.exampleVideoItem} playbackRate={3} preload="auto" autoPlay loop muted>
                                 <source src={exampleOne} type="video/mp4"></source>
@@ -340,7 +343,7 @@ export default function MinecraftServer({ data }) {
                             <p> User gifted 5 subscribers, spawning in 25 mobs </p>
                         </Grid>
 
-                        {/* Example Two */}
+                        {/****** Minecraft Server Example TWO ******/}
                         <Grid item className={classes.exampleItem}>
                             <video className={classes.exampleVideoItem} playbackRate={3} preload="auto" autoPlay loop muted>
                                 <source src={exampleTwo} type="video/mp4"></source>
@@ -348,7 +351,7 @@ export default function MinecraftServer({ data }) {
                             <p> User gifted 25 subs, spawning in 100 mobs </p>
                         </Grid>
 
-                        {/* Example Three */}
+                        {/****** Minecraft Server Example THREE ******/}
                         <Grid item className={classes.exampleItem}>
                             <video className={classes.exampleVideoItem} playbackRate={3} preload="auto" autoPlay loop muted>
                                 <source src={exampleThree} type="video/mp4"></source>
@@ -359,7 +362,7 @@ export default function MinecraftServer({ data }) {
                     </Grid>
                 </Grid>
 
-                {/* More info */}
+                {/****** More info ******/}
                 <Grid item className={classes.darkBackground}>
                     <div className={classes.moreInfo}>
                         <h1>More Information</h1>
@@ -381,7 +384,7 @@ export default function MinecraftServer({ data }) {
                     </div>
                 </Grid>
 
-                {/* Future Features */}
+                {/****** Future Features ******/}
                 <Grid item>
                     <div className={classes.featuresContainer}>
                         <h3>Future Features:</h3>
@@ -392,7 +395,7 @@ export default function MinecraftServer({ data }) {
                     </div>
                 </Grid>
 
-                {/* Footer */}
+                {/****** Footer ******/}
                 <Grid item className={classes.footerBackground}>
                     <div className={classes.footerContainer}>
                         <h3>Next project:</h3>

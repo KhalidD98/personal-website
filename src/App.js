@@ -9,6 +9,7 @@ import Home from './Home'
 import Resume from './Resume'
 import ReviewWebsite from './ReviewWebsite'
 import MinecraftServer from "./MinecraftServer";
+import PersonalWebsite from './PersonalWebsite'
 
 
 function App() {
@@ -21,7 +22,6 @@ function App() {
           <Home />
         </Route>
 
-
         <Route exact path="/reviewwebsite">
           <ReviewWebsite />
         </Route>
@@ -31,7 +31,7 @@ function App() {
         </Route>
 
         <Route exact path="/personalwebsite">
-          {/* <PersonalWebsite /> */}
+          <PersonalWebsite />
         </Route>
 
       </Switch>

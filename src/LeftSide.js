@@ -120,27 +120,27 @@ export default function LeftSide({ props }) {
             alignItems="center"
             className={classes.container}>
 
-            {/* Image */}
+            {/****** Image ******/}
             <Grid item>
                 <img className={classes.image} src={image}></img>
             </Grid>
 
-            {/* Name */}
+            {/****** Name ******/}
             <Grid item>
                 <h1 className={classes.name}> Khalid Dakak </h1>
             </Grid>
 
-            {/* Description */}
+            {/****** Description ******/}
             <Grid item>
                 <h3 className={classes.description}> JS Developer - CS Graduate </h3>
             </Grid>
 
-            {/* Resume */}
+            {/****** Resume ******/}
             <Grid item className={classes.resume} >
                 <a className={classes.resumeText} href={resumePFG} target="_blank"> <motion.h3 whileHover={{ scale: 1.1 }}> {props} </motion.h3> </a>
             </Grid>
 
-            {/* Icons */}
+            {/****** Icons ******/}
             <Grid item className={classes.icons}>
                 <Grid container
                     direction="row"
@@ -148,8 +148,7 @@ export default function LeftSide({ props }) {
                     alignItems="center"
                     spacing={3}>
 
-
-                    {/* Github Button */}
+                    {/****** Github Button ******/}
                     <Grid item onClick={githubClicked}>
                         <motion.div whileHover={{ scale: 1.1 }} className={classes.routingContainers}>
                             <GitHubIcon onClick={githubClicked} />
@@ -157,8 +156,7 @@ export default function LeftSide({ props }) {
                         </motion.div>
                     </Grid>
 
-
-                    {/* Linkedin Button */}
+                    {/****** Linkedin Button ******/}
                     <Grid item onClick={linkedInClicked}>
                         <motion.div whileHover={{ scale: 1.1 }} className={classes.routingContainers}>
                             <LinkedInIcon onClick={linkedInClicked} />
@@ -169,13 +167,13 @@ export default function LeftSide({ props }) {
                 </Grid>
             </Grid>
 
-            {/* Contact Form */}
+            {/****** Contact Form Container ******/}
             <Grid item className={classes.contactForm}>
 
-                {/* Contact me Text */}
+                {/****** Contact me Text ******/}
                 <h2 className={classes.contactFormTitle}>Contact Me</h2>
 
-                {/* Email and copy button */}
+                {/****** Copy Email Button ******/}
                 <div className={classes.email}>
                     <p className={classes.emailContent}>khaliddakak@gmail.com</p>
                     <motion.div whileHover={{ color: 'rgb(200, 0, 0)' }}>
@@ -191,13 +189,9 @@ export default function LeftSide({ props }) {
                     </motion.div>
                 </div>
 
-                {/* Copied text animation */}
+                {/****** Copied text animation ******/}
                 <motion.p animate={{ opacity: isActive ? [1, 0] : 0 }} transition={{ duration: 1 }} className={classes.popup}>Copied!</motion.p>
             </Grid>
         </Grid >
     )
 }
-// onClick={() => setIsActive(!isActive)}
-// animate={{
-//     rotate: isActive ? 90 : 0,
-// }}
