@@ -7,8 +7,8 @@ import { Grid } from '@material-ui/core'
 import { motion } from "framer-motion"
 import GitHubIcon from '@material-ui/icons/GitHub'
 import HttpIcon from '@material-ui/icons/Http'
-import albumReview from './content/albumReview.mp4'
-import minecraftServerDemo from './content/minecraftServerDemo.mp4'
+import albumReview from './content/examples/albumReview.mp4'
+import minecraftServerDemo from './content/examples/minecraftServerDemo.mp4'
 import { Link } from "react-router-dom"
 
 
@@ -75,11 +75,11 @@ export default function Projects({ data }) {
     const classes = useStyles(data)
 
     const githubClicked = () => {
-        window.location = data.github
+        window.open(data.github)
     }
 
     const websiteClicked = () => {
-        window.location = data.website
+        window.open(data.website)
     }
 
     return (

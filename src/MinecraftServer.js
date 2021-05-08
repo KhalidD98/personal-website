@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         marginBottom: '10vh',
+        marginTop: '20vh',
         fontSize: '7vh',
         textAlign: 'center',
         margin: '10px'
@@ -33,7 +34,9 @@ const useStyles = makeStyles((theme) => ({
     description: {
         width: '74vw',
         fontSize: '26px',
-        textAlign: 'center'
+        textAlign: 'center',
+        marginBottom: '170px',
+        marginTop: '40px'
     },
     homeButton: {
         color: 'white',
@@ -90,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
     dependencyContainer: {
         marginBottom: '16vh',
         marginTop: '16vh',
-        fontSize: '25px',
+        fontSize: '20px',
         [theme.breakpoints.down('xs')]: {
             fontSize: '15px',
         },
@@ -169,7 +172,12 @@ const useStyles = makeStyles((theme) => ({
     examplesContainer: {
         width: '100%',
         padding: '0px',
-        margin: '0px'
+        margin: '0px',
+        textAlign: 'center',
+        fontSize: '20px',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '3vw'
+        },
     },
     exampleItem: {
         padding: '0px',
@@ -179,7 +187,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '0px',
         margin: '0px',
         width: '500px',
-        height: '500px',
+        height: '300px',
         [theme.breakpoints.down('sm')]: {
             width: '300px',
             height: '300px'
@@ -329,6 +337,7 @@ export default function MinecraftServer({ data }) {
                             <video className={classes.exampleVideoItem} playbackRate={3} autoPlay loop muted>
                                 <source src={exampleOne} type="video/mp4"></source>
                             </video>
+                            <p> User gifted 5 subscribers, spawning in 25 mobs </p>
                         </Grid>
 
                         {/* Example Two */}
@@ -336,6 +345,7 @@ export default function MinecraftServer({ data }) {
                             <video className={classes.exampleVideoItem} playbackRate={3} autoPlay loop muted>
                                 <source src={exampleTwo} type="video/mp4"></source>
                             </video>
+                            <p> User gifted 25 subs, spawning in 100 mobs </p>
                         </Grid>
 
                         {/* Example Three */}
@@ -343,6 +353,7 @@ export default function MinecraftServer({ data }) {
                             <video className={classes.exampleVideoItem} playbackRate={3} autoPlay loop muted>
                                 <source src={exampleThree} type="video/mp4"></source>
                             </video>
+                            <p> Viewer in chat used Channel Points to spawn in mobs </p>
                         </Grid>
 
                     </Grid>
