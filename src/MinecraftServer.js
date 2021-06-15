@@ -245,7 +245,6 @@ export default function MinecraftServer({ data }) {
                     spacing={6}
                     className={classes.examplesContainer}>
 
-
                     {/****** Twitch channel points example ******/}
                     <Grid item className={classes.videoContainer}>
                         <video className={classes.videoElement} playbackRate={3} preload="auto" autoPlay loop muted>
