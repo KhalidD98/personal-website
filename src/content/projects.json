@@ -31,7 +31,7 @@
     },
     {
         "name": "Personal Website",
-        "description": "The page you currently are on, the biggest struggle in creating it has to be the format going from desktop to mobile dynamically.",
+        "description": "This is the website you are currently on.",
         "color": "#008698",
         "icons": [
             "react",
