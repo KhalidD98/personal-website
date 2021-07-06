@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
         fontFamily: 'poppins',
         overflow: 'hidden',
-        fontSize: '20px'
     },
     dependencies: {
         marginLeft: '1.5vw',
@@ -31,12 +30,13 @@ const useStyles = makeStyles((theme) => ({
         color: '#ff997a'
     },
     dependencyContainer: {
-        marginBottom: '16vh',
-        marginTop: '16vh',
+        marginBottom: '10vh',
+        marginTop: '10vh',
         fontSize: '20px',
         [theme.breakpoints.down('xs')]: {
             fontSize: '15px',
         },
+        fontSize: '20px'
     },
     footerContainer: {
         width: '65vw',
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     },
     link: {
         textDecoration: 'none',
-        color: 'white'
+        color: 'white',
     },
     homeButton: {
         color: 'white',
@@ -87,7 +87,11 @@ const useStyles = makeStyles((theme) => ({
     },
     goalsContainer: {
         backgroundColor: '#130f40',
-        width: '24rem'
+        width: '26rem',
+        fontSize: '20px',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '15px',
+        },
     },
     hyperlink: {
         textDecoration: 'none',
@@ -96,6 +100,16 @@ const useStyles = makeStyles((theme) => ({
     strugglesContainer: {
         width: '50vw',
         textAlign: 'center',
+        fontSize: '20px',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '15px',
+        },
+    },
+    featuresContainer: {
+        fontSize: '20px',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '15px',
+        },
     }
 }))
 
