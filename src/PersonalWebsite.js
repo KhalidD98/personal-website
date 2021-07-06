@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '40px'
     },
     coloredText: {
-        color: '#FF6960'
+        color: '#ff997a'
     },
     darkBackground: {
         width: '100%',
@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
     },
     hyperlink: {
         textDecoration: 'none',
-        color: '#FF6960'
+        color: '#ff997a'
     },
     strugglesContainer: {
         width: '50vw',
@@ -157,7 +157,7 @@ export default function PersonalWebsite() {
                 {/****** Goals for the site ******/}
                 <Grid item className={classes.darkBackground}>
                     <div className={classes.goalsContainer}>
-                        <h3>Goals:</h3>
+                        <h2>Goals:</h2>
                         <p>- Make website mobile friendly</p>
                         <p>- Have everything be <span className={classes.coloredText}>no more</span> than two clicks away</p>
                         <p>- Proper visual hierarchy</p>
