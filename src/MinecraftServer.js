@@ -252,9 +252,9 @@ export default function MinecraftServer({ data }) {
                         </video>
 
                         <p className={classes.exampleText}>
-                            Streamer and Moderators have the ability
-                            <span className={classes.coloredText}> in the Twitch Chat </span>
-                            to control the creation and deletion, as well as refresh api tokens
+                            The streamer and moderators have the ability,
+                            <span className={classes.coloredText}> in the Twitch Chat, </span>
+                            to create, delete, and refresh API tokens
                             of Minecraft Redemptions as a fail safe incase anything goes wrong.
                         </p>
                     </Grid>
@@ -265,9 +265,9 @@ export default function MinecraftServer({ data }) {
                             <source src={inGameExample} type="video/mp4" ></source>
                         </video>
                         <p className={classes.exampleText}>
-                            Streamer and Moderators have the ability
+                            The streamer and moderators have the ability
                             <span className={classes.coloredText}> in the Minecraft Server </span>
-                            to control the creation and deletion, as well as refresh api tokens
+                            to control the creation and deletion, as well as refresh API tokens
                             of Minecraft Redemptions as a fail safe incase anything goes wrong.
                         </p>
                     </Grid>
@@ -278,13 +278,13 @@ export default function MinecraftServer({ data }) {
                             <source src={loginExample} type="video/mp4"></source>
                         </video>
                         <p className={classes.exampleText}>
-                            When Streamer
-                            <span className={classes.coloredText}> logs into </span> the server
+                            When the streamer
+                            <span className={classes.coloredText}> logs into </span> the server,
                             Minecraft Redemptions are <span className={classes.coloredText}> created </span>
-                            for viewers to use, when the streamer
-                            <span className={classes.coloredText}> leaves </span> the server Minecraft Redemptions
+                            for viewers to use. When the streamer
+                            <span className={classes.coloredText}> leaves </span> the server, Minecraft Redemptions
                             are deleted and commands are
-                            <span className={classes.coloredText}> disabled </span>
+                            <span className={classes.coloredText}> disabled. </span>
                         </p>
                     </Grid>
                 </Grid>
@@ -371,7 +371,7 @@ export default function MinecraftServer({ data }) {
                             they would get 5 random mobs spawn on the server. Although people really enjoyed these features
                             it didn't allow new viewers who didn't want to spend money participate. Which is where
                             Channel Point Redemptions comes into play.
-                    </p>
+                        </p>
                         <Divider />
                         <p>
                             I then learned to read Channel Point Redemptions on Twitch, which allowed viewers to spawn
@@ -379,7 +379,7 @@ export default function MinecraftServer({ data }) {
                             manually create every redemption and manually pause them when the streamer was logged off the
                             server. So I took the time to learn and implement the creation and deletion of channel point
                             redemptions to better automate the process.
-                    </p>
+                        </p>
                     </div>
                 </Grid>
 
