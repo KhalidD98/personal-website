@@ -21,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
     description: {
         fontSize: '2.8vh',
         fontFamily: 'poppins',
+        textAlign: 'center',
+        width: '35vw'
     },
     resume: {
         fontSize: '3vh',
@@ -132,7 +134,7 @@ export default function LeftSide({ props }) {
 
             {/****** Description ******/}
             <Grid item>
-                <h3 className={classes.description}> JS Developer - CS Graduate </h3>
+                <h3 className={classes.description}> Full Stack Web Developer - React.js, Express.js, Node.js, Firebase - CS Graduate </h3>
             </Grid>
 
             {/****** Resume ******/}
