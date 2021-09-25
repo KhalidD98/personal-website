@@ -130,7 +130,6 @@ const useStyles = makeStyles((theme) => ({
         color: 'white'
     },
     apiExplanationCurveBottom: {
-        // position: 'absolute',
         top: '0',
         left: '0',
         width: '100%',
@@ -145,7 +144,6 @@ const useStyles = makeStyles((theme) => ({
         fill: '#CD494F'
     },
     apiExplanationCurveTop: {
-        // position: 'absolute',
         top: '0',
         left: '0',
         width: '100%',
@@ -154,7 +152,6 @@ const useStyles = makeStyles((theme) => ({
         transform: 'rotate(180deg)'
     },
     biggestStruggleCurveTop: {
-        // position: 'absolute',
         top: '0',
         left: '0',
         width: '100%',
@@ -170,7 +167,6 @@ const useStyles = makeStyles((theme) => ({
         fill: '#CD494F'
     },
     biggestStruggleCurveBottom: {
-        // position: 'absolute',
         top: '0',
         left: '0',
         width: '100%',
@@ -186,7 +182,6 @@ const useStyles = makeStyles((theme) => ({
     },
 
     futureFeaturesCurve: {
-        // position: 'absolute',
         top: '0',
         left: '0',
         width: '100%',
@@ -202,7 +197,6 @@ const useStyles = makeStyles((theme) => ({
         fill: '#CD494F'
     },
     futureFeaturesBottomCurve: {
-        // position: 'absolute',
         top: '0',
         left: '0',
         width: '100%',
