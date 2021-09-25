@@ -1,7 +1,7 @@
 [
     {
-        "name": "Review Website",
-        "description": "A Website that queries album reviews from Google Sheets Api, and displays it on screen with filter capabilities.",
+        "name": "Album Review Website",
+        "description": "A website that queries album reviews from Google Sheets Api, and displays it on screen with filter capabilities.",
         "color": "#CD494F",
         "icons": [
             "react",
@@ -16,7 +16,7 @@
     },
     {
         "name": "Twitch Controlled Minecraft Server",
-        "description": "Minecraft Server run on a Digital Ocean droplet that allows Twitch viewers to spawn mobs onto the server using donations or redemptions.",
+        "description": "Minecraft Server which runs on a Digital Ocean droplet that allows Twitch viewers to spawn mobs onto the server using donations or redemptions.",
         "color": "#393E46",
         "video": "minecraftServerDemo.mp4",
         "icons": [
