@@ -182,8 +182,8 @@ export default function PersonalWebsite() {
                 <Grid item className={classes.darkBackground}>
                     <div className={classes.strugglesContainer}>
                         <h3>Biggest Struggles:</h3>
-                        <p>I had 3 main struggles when desigining and programming this personal website. First
-                            on the home page it took me an entire day to get the left side to be static and the right
+                        <p>I had 3 main struggles when desigining and programming this personal website. First,
+                            on the home page, it took me an entire day to get the left side to be static and the right
                             side to scroll. The difficult part was getting the entire page to fit on any aspect ratio,
                             as well as stopping the page from expanding horizontally. To fix this I seperated the left
                             and right side into seperate files that way I can style entire pages rather than trying to
