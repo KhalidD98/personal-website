@@ -222,9 +222,9 @@ const useStyles = makeStyles((theme) => ({
 export default function ReviewWebsite({ data }) {
 
     // Scroll window to top at startup
-    // useEffect(() => {
-    //     window.scrollTo(0, 0)
-    // }, [])
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     const classes = useStyles(data)
 
