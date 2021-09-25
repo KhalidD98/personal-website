@@ -121,6 +121,7 @@ const useStyles = makeStyles((theme) => ({
         background: '#393E46',
         height: '200px',
         width: '100%',
+        height: '14vh'
     },
     coloredText: {
         color: '#000000',
