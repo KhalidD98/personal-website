@@ -21,8 +21,13 @@ export default function RightSide() {
 
     return (
         <div className={classes.container}>
+            {/* Review Website */}
             <Projects data={projectData[0]} />
+
+            {/* Single Streamer Minecraft Server */}
             <Projects data={projectData[1]} />
+
+            {/* Personal Website */}
             <Projects data={projectData[2]} />
         </div>
     )
