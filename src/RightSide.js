@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         overflow: 'hidden',
         lineHeight: '0',
-        // transform: 'rotate(180deg)'
     },
     minecraftServerCurveSVG: {
         position: 'relative',
@@ -30,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         overflow: 'hidden',
         lineHeight: '0',
-        // transform: 'rotate(180deg)'
     },
     personalWebsiteCurveSVG: {
         position: 'relative',
