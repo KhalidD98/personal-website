@@ -1,8 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { DiReact, DiJsBadge, DiCss3, DiNodejsSmall } from "react-icons/di"
-import { SiMaterialUi } from "react-icons/si"
-import { FaDigitalOcean, FaTwitch } from "react-icons/fa";
+import { SiMaterialUi, SiFirebase } from "react-icons/si"
+import { FaDigitalOcean, FaTwitch, FaVuejs, FaAws } from "react-icons/fa";
 import { Grid } from '@material-ui/core'
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
@@ -10,6 +10,7 @@ import GitHubIcon from '@material-ui/icons/GitHub'
 import HttpIcon from '@material-ui/icons/Http'
 import albumReview from './content/examples/albumReview.mp4'
 import minecraftServerDemo from './content/examples/minecraftServerDemo.mp4'
+import amrExample from './content/AMR examples/amrExample.mp4'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -142,6 +143,24 @@ export default function Projects({ data }) {
                                     <FaTwitch key={index} className={classes.icons} />
                                 </Grid>
                             )
+                        case 'aws':
+                            return (
+                                <Grid item>
+                                    <FaAws key={index} className={classes.icons} />
+                                </Grid>
+                            )
+                        case 'vue':
+                            return (
+                                <Grid item>
+                                    <FaVuejs key={index} className={classes.icons} />
+                                </Grid>
+                            )
+                        case 'firebase':
+                            return (
+                                <Grid item>
+                                    <SiFirebase key={index} className={classes.icons} />
+                                </Grid>
+                            )
                         default:
                             return null
                     }
@@ -204,6 +223,11 @@ export default function Projects({ data }) {
                 {data.video === 'minecraftServerDemo.mp4' &&
                     <video width="90%" height="85%" playbackRate={3} preload="auto" autoPlay loop muted >
                         <source src={minecraftServerDemo} type="video/mp4"></source>
+                    </video>
+                }
+                {data.video === 'amrExample.mp4' &&
+                    <video width="90%" height="85%" playbackRate={3} preload="auto" autoPlay loop muted >
+                        <source src={amrExample} type="video/mp4"></source>
                     </video>
                 }
             </Grid>

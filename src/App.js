@@ -10,6 +10,7 @@ import Resume from './Resume'
 import ReviewWebsite from './ReviewWebsite'
 import MinecraftServer from "./MinecraftServer";
 import PersonalWebsite from './PersonalWebsite'
+import AccessMyResearch from './AccessMyResearch'
 
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
 
         <Route exact path="/personalwebsite">
           <PersonalWebsite />
+        </Route>
+
+        <Route exact path="/amr">
+          <AccessMyResearch />
         </Route>
 
       </Switch>
