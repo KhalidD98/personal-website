@@ -5,9 +5,10 @@ import { Grid } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 import { Link } from "react-router-dom"
 import jsonData from "../src/content/projects.json"
+import AMRCard from "./content/AMRCard"
 import conversationCollection from './content/AMR examples/conversationCollection.PNG'
 import conversationMessages from './content/AMR examples/conversationMessages.PNG'
-import conversations from './content/AMR examples/conversations.PNG'
+import conversationMessage from './content/AMR examples/conversationIndividualMessage.PNG'
 
 const useStyles = makeStyles((theme) => ({
     main: {
@@ -74,7 +75,11 @@ const useStyles = makeStyles((theme) => ({
         color: 'white'
     },
     conversationsContainer: {
-
+        margin: '1rem',
+        padding: '1rem',
+    },
+    databaseTitle: {
+        marginTop: '2rem'
     },
 }))
 
@@ -82,9 +87,9 @@ export default function AccessMyResearch({ data }) {
     const classes = useStyles(data)
 
     // Scroll to top on startup
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
+    // useEffect(() => {
+    //     window.scrollTo(0, 0)
+    // }, [])
 
     return (
         <motion.div
@@ -117,6 +122,35 @@ export default function AccessMyResearch({ data }) {
                     {jsonData[3].description}
                 </Grid>
 
+
+
+                {/*----- Database Structure Title -----*/}
+                <Grid item className={classes.databaseTitle}>
+                    <h1> Database Structure </h1>
+                </Grid>
+
+                {/*----- Database Structure Cards -----*/}
+                <Grid item className={classes.conversationsContainer}>
+                    {/* TODO: Fix for mobile */}
+                    <Grid container
+                        direction="row"
+                        justifyContent="center"
+                        alignItems="center">
+                        <AMRCard
+                            src={conversationCollection}
+                            info={"We have a conversations collection that contains every conversation ever had"}
+                        />
+                        <AMRCard
+                            src={conversationMessages}
+                            info={"Within each conversation you have a messages collection, this contains every message from that individual conversation. As well as fields that contains every user within this conversation, allowing one-on-one chats, or group conversations."}
+                        />
+                        <AMRCard
+                            src={conversationMessage}
+                            info={"Within each messages field there is data containing the user who sent it, the message itself, as well as the timestamp allowing us to query them by timestamp"}
+                        />
+                    </Grid>
+                </Grid>
+
                 {/*----- Dependencies -----*/}
                 <Grid item className={classes.dependencyContainer}>
                     <h3 className={classes.dependecyTitle}>"dependencies used":</h3>
@@ -130,28 +164,6 @@ export default function AccessMyResearch({ data }) {
                     </div>
                     <p>{"}"}</p>
                 </Grid>
-
-                <Grid item className={classes.conversationsContainer}>
-                    <Grid container
-                        direction="row"
-                        justifyContent="center"
-                        alignItems="center">
-
-                        <Grid item>
-                            <img
-                                className={classes.albumReviewRow} src={conversationCollection}></img>
-                        </Grid>
-                        <Grid item>
-                            <img className={classes.albumReviewRow} src={conversationMessages}></img>
-                        </Grid>
-                        <Grid item>
-                            <img className={classes.albumReviewRow} src={conversations}></img>
-                        </Grid>
-
-                    </Grid>
-
-                </Grid>
-
 
                 {/*----- Footer -----*/}
                 <Grid item className={classes.footerBackground}>
@@ -171,7 +183,6 @@ export default function AccessMyResearch({ data }) {
                 </Grid>
 
             </Grid>
-
         </motion.div>
     )
 }
