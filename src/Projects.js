@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import GitHubIcon from '@material-ui/icons/GitHub'
 import HttpIcon from '@material-ui/icons/Http'
-import albumReview from './content/examples/albumReview.mp4'
+import albumReview from './content/Review Website Content/albumReview.mp4'
 import minecraftServerDemo from './content/examples/minecraftServerDemo.mp4'
 import amrExample from './content/AMR examples/amrExample.mp4'
 

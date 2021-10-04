@@ -3,9 +3,9 @@ import { Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import image from './content/profilePicture.png'
+import image from './content/Main Page Content/profilePicture.png'
 import { Link } from "react-router-dom"
-import resumePFG from "./content/KhalidDakakResume.pdf"
+import resume from "./content/Main Page Content/KhalidDakakResume.pdf"
 import { motion } from "framer-motion"
 import { MdContentCopy } from "react-icons/md"
 
@@ -139,7 +139,7 @@ export default function LeftSide({ props }) {
 
             {/****** Resume ******/}
             <Grid item className={classes.resume} >
-                <a className={classes.resumeText} href={resumePFG} target="_blank"> <motion.h3 whileHover={{ scale: 1.1 }}> {props} </motion.h3> </a>
+                <a className={classes.resumeText} href={resume} target="_blank"> <motion.h3 whileHover={{ scale: 1.1 }}> {props} </motion.h3> </a>
             </Grid>
 
             {/****** Icons ******/}

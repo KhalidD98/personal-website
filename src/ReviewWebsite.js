@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import { makeStyles } from '@material-ui/core/styles'
 import { motion } from "framer-motion"
 import { Grid } from '@material-ui/core'
-import albumReviewRow from './content/reviewWebsiteRow.png'
+import albumReviewRow from './content/Review Website Content/reviewWebsiteRow.png'
 import searchBar from './content/searchBar.png'
 import jsonData from "../src/content/projects.json"
 
