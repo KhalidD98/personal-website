@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Grid } from '@material-ui/core'
 import { Button } from '@material-ui/core'
 import { Link } from "react-router-dom"
+import { Typography } from '@mui/material';
 import jsonData from "../src/content/projects.json"
 import AMRCard from "./content/AMRCard"
 import conversationCollection from './content/AMR examples/conversationCollection.PNG'
@@ -81,6 +82,31 @@ const useStyles = makeStyles((theme) => ({
     databaseTitle: {
         marginTop: '2rem'
     },
+    goalContainer: {
+        [theme.breakpoints.up('md')]: {
+            width: '60%',
+        },
+        [theme.breakpoints.down('md')]: {
+            width: '80%',
+        },
+    },
+    roleContainer: {
+        [theme.breakpoints.up('md')]: {
+            width: '60%',
+        },
+        [theme.breakpoints.down('md')]: {
+            width: '80%',
+        },
+    },
+    challengeContainer: {
+        [theme.breakpoints.up('md')]: {
+            width: '60%',
+        },
+        [theme.breakpoints.down('md')]: {
+            width: '80%',
+        },
+
+    },
 }))
 
 export default function AccessMyResearch({ data }) {
@@ -122,7 +148,26 @@ export default function AccessMyResearch({ data }) {
                     {jsonData[3].description}
                 </Grid>
 
+                {/*-----  Our Goal  -----*/}
+                <Grid item className={classes.goalContainer}>
+                    <h1>
+                        The Goal
+                    </h1>
+                    <p>
+                        The primary goal for my group was to implement a fully functional chat system feature both on the front end and back end of the website. We decided to use Firestore from Firebase as the cloud-hosted NoSQL database because it is easily scalable, has a multi-model structure, and has real-time document listening capabilities.
+                    </p>
+                    <p>
+                        On the contrary, relational databases store data in a fixed and predefined structure. This means you must design and create the database schema in terms of tables and columns when starting development. Anytime the requirements are modified, changes in the schema must be made, which includes defining new relations, creating new columns, and reflecting the changes in your application. NoSQL on the other hand provides more flexibility. There is no requirement to design a schema in order to begin working on the application, and it does not put a restriction on the types of data you can store together.
+                    </p>
+                    <p>
+                        The primary reason we chose a NoSQL database, like Firestore, is because it has the ability to scale easily. NoSQL databases are built on a masterless, peer-to-peer architecture, unlike relational databases. Data is partitioned and balanced across multiple nodes in a cluster, and aggregated queries are automatically distributed by default. This allows for easy scalability by simply executing a few commands which adds a new cluster to the server. This also improves the performance, allowing for continuous availability.
 
+                    </p>
+                    <p>
+                        Finally, Firestore has an onSnapshot() method  that allows you to listen to any document changes. When a new message is created, the method will run for every user within the conversation, rendering the new messages in real-time. This creates seamless conversations and eliminates waiting for messages to appear. Additional features can be implemented, such as "typing..." notifications which indicate if a user is in the middle of sending a message.
+
+                    </p>
+                </Grid>
 
                 {/*----- Database Structure Title -----*/}
                 <Grid item className={classes.databaseTitle}>
@@ -149,6 +194,26 @@ export default function AccessMyResearch({ data }) {
                             info={"Within each messages field there is data containing the user who sent it, the message itself, as well as the timestamp allowing us to query them by timestamp"}
                         />
                     </Grid>
+                </Grid>
+
+
+                {/*-----  My Role  -----*/}
+                <Grid item className={classes.roleContainer}>
+                    <h1>
+                        My Role
+                    </h1>
+                    <p>
+                        Our team had two members. I was the developer of all the functions that were used to communicate with the Firestore Database. The other team member used my functions to display information from the database on screen using the Vue.Js Framework. These functions were used to query information, such as usernames, past messages, and message timestamps from Firestore. This data was put into a stack to keep the order of messages intact. Each message was held in an object containing the user who sent it, the text, and the message timestamp. My team member then easily created a loop displaying each message in chronological order and would reformat the timestamp according to the instructions given to us by our team leads.
+                    </p>
+                </Grid>
+                {/*-----  The Challenges  -----*/}
+                <Grid item className={classes.challengeContainer}>
+                    <h1>
+                        Biggest Challenge
+                    </h1>
+                    <p>
+                        The problem we faced when creating this new feature was accessing AWS Cognito, which would allow us to retrieve the display name for the logged in user. My teammate and I had no prior experience with AWS Cognito, so we swiftly taught ourselves how it worked. Once I retrieved the display name, it was assigned to the users collection for each conversation document.
+                    </p>
                 </Grid>
 
                 {/*----- Dependencies -----*/}
