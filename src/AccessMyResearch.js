@@ -113,15 +113,8 @@ const useStyles = makeStyles((theme) => ({
     exampleVideoItem: {
         width: '90%',
         height: '90%',
-        // width: '1000px',
-        // height: '700px',
-        // [theme.breakpoints.down('sm')]: {
-        //     width: '300px',
-        //     height: '300px'
-        // },
     },
     shapeDivider: {
-        // position: 'absolute',
         top: '0',
         left: '0',
         width: '100%',
