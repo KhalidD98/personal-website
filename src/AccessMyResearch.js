@@ -244,7 +244,7 @@ export default function AccessMyResearch({ data }) {
                         <Grid item >
                             <AMRCard
                                 src={conversationMessage}
-                                info={"Within each messages field there is data containing the user who sent it, the message itself, as well as the timestamp allowing us to query them by timestamp"}
+                                info={"Within each messages field there is data containing the user who sent it, the message itself, as well as the timestamp allowing us to query them chronologically"}
                             />
                         </Grid>
                     </Grid>
