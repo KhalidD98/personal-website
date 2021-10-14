@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '50%'
     },
     footerBackground: {
-        background: '#008698',
+        background: '#393E46',
         height: '200px',
         width: '100%',
     },
@@ -140,9 +140,9 @@ export default function AccessMyResearch({ data }) {
     const classes = useStyles(data)
 
     // Scroll to top on startup
-    // useEffect(() => {
-    //     window.scrollTo(0, 0)
-    // }, [])
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <motion.div
@@ -306,8 +306,8 @@ export default function AccessMyResearch({ data }) {
                     </div>
                     <div className={classes.footerContainer}>
                         <h3>Next project:</h3>
-                        <Link className={classes.link} to={{ pathname: '/personalwebsite' }}>
-                            <h3>Personal Website</h3>
+                        <Link className={classes.link} to={{ pathname: '/twitchmcserver' }}>
+                            <h3>Twitch Controlled Minecraft Server</h3>
                         </Link>
                     </div>
                 </Grid>
