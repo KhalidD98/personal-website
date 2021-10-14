@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 'auto',
     },
     footerBackground: {
-        background: '#393E46',
+        background: '#008698',
         height: '200px',
         width: '100%',
         height: '14vh'
@@ -210,7 +210,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'block',
         width: 'calc(123% + 1.3px)',
         height: '40px',
-        fill: '#393E46'
+        fill: '#008698'
     }
 }))
 
@@ -372,8 +372,8 @@ export default function ReviewWebsite({ data }) {
                 <Grid item className={classes.footerBackground}>
                     <div className={classes.footerContainer}>
                         <h3>Next project:</h3>
-                        <Link className={classes.link} to={{ pathname: '/twitchmcserver' }}>
-                            <h3>Twitch Controlled Minecraft Server</h3>
+                        <Link className={classes.link} to={{ pathname: '/personalwebsite' }}>
+                            <h3>Personal Website</h3>
                         </Link>
                     </div>
                 </Grid>
