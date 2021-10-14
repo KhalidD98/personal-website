@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 'auto',
     },
     footerBackground: {
-        background: '#6ab04c',
+        background: '#474747',
         height: '200px',
         width: '100%',
     },
@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         backgroundColor: '#006698',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     goalsContainer: {
         backgroundColor: '#006698',
@@ -110,7 +110,43 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             fontSize: '15px',
         },
-    }
+    },
+    shapeDividerBottom: {
+        top: '0',
+        left: '0',
+        width: '100%',
+        overflow: 'hidden',
+        lineHeight: '0',
+        transform: 'rotate(180deg)',
+    },
+    shapeDividerTop: {
+        top: '0',
+        left: '0',
+        width: '100%',
+        overflow: 'hidden',
+        lineHeight: '0',
+    },
+    svgDark: {
+        position: 'relative',
+        display: 'block',
+        width: 'calc(100% + 1.3px)',
+        height: '50px',
+        fill: '#006698',
+    },
+    svgDark2: {
+        position: 'relative',
+        display: 'block',
+        width: 'calc(120% + 1.3px)',
+        height: '53px',
+        fill: '#006698',
+    },
+    splitSvg: {
+        position: 'relative',
+        display: 'block',
+        width: 'calc(100% + 1.3px)',
+        height: '158px',
+        fill: '#474747'
+    },
 }))
 
 export default function PersonalWebsite() {
@@ -135,26 +171,31 @@ export default function PersonalWebsite() {
                 alignItems="center"
                 spacing={10}>
 
-                {/****** Home button ******/}
+                {/*----- Home button -----*/}
                 <Grid item className={classes.homeButtonContainer}>
                     <Link to={{ pathname: '/' }}>
                         <Button className={classes.homeButton}>Home</Button>
                     </Link>
                 </Grid>
 
-                {/****** Title and description ******/}
+                {/*----- Title and description -----*/}
                 <Grid item>
                     <h1 className={classes.title}>
                         {jsonData[2].name}
                     </h1>
                 </Grid>
 
-                {/****** Description ******/}
+                {/*----- Description -----*/}
                 <Grid item className={classes.description}>
                     {jsonData[2].description}
                 </Grid>
+                <div className={classes.shapeDividerBottom}>
+                    <svg className={classes.svgDark} viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                    </svg>
+                </div>
 
-                {/****** Goals for the site ******/}
+                {/*----- Goals for the site -----*/}
                 <Grid item className={classes.darkBackground}>
                     <div className={classes.goalsContainer}>
                         <h2>Goals:</h2>
@@ -165,8 +206,12 @@ export default function PersonalWebsite() {
                         <p>- Include videos to show examples</p>
                     </div>
                 </Grid>
-
-                {/****** Dependencies ******/}
+                <div className={classes.shapeDividerTop}>
+                    <svg className={classes.svgDark} viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                    </svg>
+                </div>
+                {/*----- Dependencies -----*/}
                 <Grid item className={classes.dependencyContainer}>
                     <h3 className={classes.dependecyTitle}>"dependencies used":</h3>
                     <p>{"{"}</p>
@@ -178,7 +223,13 @@ export default function PersonalWebsite() {
                     <p>{"}"}</p>
                 </Grid>
 
-                {/****** Struggles ******/}
+                <div className={classes.shapeDividerBottom}>
+                    <svg className={classes.svgDark2} viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                    </svg>
+                </div>
+
+                {/*----- Struggles -----*/}
                 <Grid item className={classes.darkBackground}>
                     <div className={classes.strugglesContainer}>
                         <h3>Biggest Struggles:</h3>
@@ -206,7 +257,13 @@ export default function PersonalWebsite() {
                     </div>
                 </Grid>
 
-                {/****** Future Features ******/}
+                <div className={classes.shapeDividerTop}>
+                    <svg className={classes.svgDark2} viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                    </svg>
+                </div>
+
+                {/*----- Future Features -----*/}
                 <Grid item>
                     <div className={classes.featuresContainer}>
                         <h3>Future Features:</h3>
@@ -216,7 +273,15 @@ export default function PersonalWebsite() {
                     </div>
                 </Grid>
 
-                {/****** Footer ******/}
+                <div className={classes.shapeDividerBottom}>
+                    <svg className={classes.splitSvg} viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <rect x="1200" height="3.6"></rect>
+                        <rect height="3.6"></rect>
+                        <path d="M0,0V3.6H580.08c11,0,19.92,5.09,19.92,13.2,0-8.14,8.88-13.2,19.92-13.2H1200V0Z"></path>
+                    </svg>
+                </div>
+
+                {/*----- Footer -----*/}
                 <Grid item className={classes.footerBackground}>
                     <div className={classes.footerContainer}>
                         <h3>Next project:</h3>
