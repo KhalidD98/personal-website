@@ -141,7 +141,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: 'auto',
     },
     footerBackground: {
-        background: '#358D5A',
+        background: '#CD494F',
         height: '200px',
         width: '100%',
     },
@@ -217,7 +217,7 @@ const useStyles = makeStyles((theme) => ({
         fill: '#ff4f47',
     },
     curveFillBlue: {
-        fill: '#358D5A',
+        fill: '#CD494F',
     },
     achievementCurveBottom: {
         top: '0',
@@ -506,8 +506,8 @@ export default function MinecraftServer({ data }) {
                     </div>
                     <div className={classes.footerContainer}>
                         <h3>Next project:</h3>
-                        <Link className={classes.link} to={{ pathname: '/amr' }}>
-                            <h3>Access My Research</h3>
+                        <Link className={classes.link} to={{ pathname: '/reviewwebsite' }}>
+                            <h3>Album Review Website</h3>
                         </Link>
                     </div>
                 </Grid>
