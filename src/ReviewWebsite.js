@@ -41,7 +41,8 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center'
     },
     albumReviewRow: {
-        width: '90vw'
+        width: '90vw',
+        borderRadius: '10px'
     },
     apiExplanation: {
         display: 'block',
@@ -93,6 +94,7 @@ const useStyles = makeStyles((theme) => ({
         minWidth: '270px',
         marginTop: '12vh',
         marginBottom: '0vh',
+        borderRadius: '10px'
     },
     filterText: {
         display: 'block',
@@ -211,6 +213,9 @@ const useStyles = makeStyles((theme) => ({
         width: 'calc(123% + 1.3px)',
         height: '40px',
         fill: '#008698'
+    },
+    visitButton: {
+        color: 'black'
     }
 }))
 
@@ -220,6 +225,10 @@ export default function ReviewWebsite({ data }) {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+
+    const visitWebsite = () => {
+        window.open("https://album-review-website.web.app/")
+    }
 
     const classes = useStyles(data)
 
@@ -245,7 +254,7 @@ export default function ReviewWebsite({ data }) {
                 {/****** Title and description ******/}
                 <Grid item>
                     <Grid container
-                        direction="row"
+                        direction="column"
                         justify="center"
                         alignItems="center"
                         className={classes.titleanddescription}
@@ -260,6 +269,16 @@ export default function ReviewWebsite({ data }) {
                             <h3 className={classes.description}>
                                 {jsonData[0].description}
                             </h3>
+                        </Grid>
+
+                        <Grid item>
+                            <Button
+                                variant="contained"
+                                className={classes.visitButton}
+                                onClick={visitWebsite}
+                            >
+                                Visit Website
+                            </Button>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -314,14 +333,7 @@ export default function ReviewWebsite({ data }) {
                     </div>
                     <div className={classes.biggestStruggle}>
                         <h3>Biggest Struggles:</h3>
-                        <p>My first struggle was I was attempting to get all the google-sheet API data as well as
-                            the album-art API covers for each album simultaneously <span className={classes.coloredText}>before</span> rendering. This caused issues since I needed to loop
-                            over all the google-sheet API data in order to know which album to get the cover for. This would mean
-                            making 200+ API calls to the album-cover API and having all of them be awaited simultaneously which caused the browser to
-                            stall most of the time.
-                            I eventually moved the album-cover API call inside of the card creation file
-                            which improved speed since I didn't make 200+ API calls back to back, but instead by the time one card was created
-                            the response from the album-cover API had been recieved. </p>
+                        <p>I made the mistake of getting both the Google Sheets API and Album Art API data before rendering anything on screen. This caused problems since I would make upwards of 200+ Asynchronous API Calls simultaneously, causing the browser to stall. I resolved this by calling the Album Art API during the rendering of each Album on screen, spreading the API calls more efficiently.  </p>
                     </div>
 
                     <div className={classes.biggestStruggleCurveBottom}>
