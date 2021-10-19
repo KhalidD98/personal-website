@@ -81,6 +81,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '1rem',
     },
     databaseTitle: {
+        textAlign: 'center',
         marginTop: '2rem'
     },
     lightBackground: {
@@ -211,6 +212,7 @@ export default function AccessMyResearch({ data }) {
                 {/*----- Database Structure Title -----*/}
                 <Grid item className={classes.databaseTitle}>
                     <h1> Database Structure </h1>
+                    <p>(Hover the cards)</p>
                 </Grid>
 
                 {/*----- Database Structure Cards -----*/}
