@@ -460,19 +460,14 @@ export default function MinecraftServer({ data }) {
                     <div className={classes.moreInfo}>
                         <h1>More Information</h1>
                         <p>
-                            This project has been an almost 2 year continuous project. It started out where a $1 donation
-                            would spawn a random mob. Then added the feature that when a viewer subscribed to the channel
-                            they would get 5 random mobs spawn on the server. Although people really enjoyed these features
-                            it didn't allow new viewers who didn't want to spend money participate. Which is where
-                            Channel Point Redemptions comes into play.
+                            This project has been an almost 2 year process. It started out simply where a $1 donation
+                            would spawn a random mob or potion effect. This then lead to the implementation of subscriptions triggering 5 random mob spawns. Although people really enjoyed these features,
+                            it didn't allow new viewers who didn't want to spend money to participate in the fun. Which is where the idea of using Twitch's
+                            Channel Point Redemptions feature on their website to come into play.
                         </p>
                         <Divider />
                         <p>
-                            I then learned to read Channel Point Redemptions on Twitch, which allowed viewers to spawn
-                            mobs and potion effects individually as if shopping online. At first implementation we would
-                            manually create every redemption and manually pause them when the streamer was logged off the
-                            server. So I took the time to learn and implement the creation and deletion of channel point
-                            redemptions to better automate the process.
+                            I then learned to read Channel Point Redemptions through the Twitch API. This allowed viewers to spawn mobs and potion effects individually with the Twitch Channel Point Redemptions feature. At first implementation, we would create every redemption and manually pause them when the streamer was logged off the server. This wasn’t ideal since it took up too much time pausing and unpausing the purchasing of redemptions. I decided to learn and implement the creation and deletion of channel point redemptions automatically with an in-game command and when the streamer logged on and off the server to better automate the process.
                         </p>
                     </div>
                 </Grid>
